@@ -223,19 +223,19 @@
 /* Nav colors */
 
 .nav-menu a, .nav-menu li > a {
-  color: #2b3252;
-  background: #fad744;
+  color: #fad744;
+  background: #2b3252;
 }
 .nav-menu a span, .nav-menu li > a span{
   color: #ef5455;
 }
 
 .nav-menu a:hover, .nav-menu .active, .nav-menu li:hover > a {
-  color: #fad744;
-  background: #2b3252;
+  color: #2b3252;
+  background: #fad744;
 }
 .nav-menu a:hover span, .nav-menu .active span, .nav-menu li:hover > a span {
-  color: #fad744;
+  color: #2b3252;
 }
 
 /* Testimonials colors */
