@@ -17,34 +17,20 @@
 \usepackage{ifthen}
 
 \usepackage{tikz}
-\usepackage{tikz-3dplot}
-\usepackage{smartdiagram}
 \usepackage{float}
 
 \usepackage{array}
-%\setlength\extrarowheight{1.5em} % adds some spacing between the lines of the CV's tabulars
-% not used here as not to interfer with other tables
 \usetikzlibrary{decorations.text}
 \usetikzlibrary{fadings}
 \usetikzlibrary{calc}
-
 \usetikzlibrary{shapes.misc,positioning}
 \usetikzlibrary{arrows}
 \usetikzlibrary{arrows.meta}
-\usetikzlibrary{backgrounds} 
+\usetikzlibrary{backgrounds}
 \usetikzlibrary{shadings}
-\usetikzlibrary{calendar} 
-\usetikzlibrary{er}
-\usetikzlibrary{patterns} % horizontal lines, vertical lines, north east lines, north west lines, grid, crosshatch, dots, crosshatch dots, fivepointed stars, sixpointed stars, bricks
-\usetikzlibrary{shapes} 
-\usetikzlibrary{shapes.geometric}
-\usetikzlibrary{decorations}
-\usetikzlibrary{topaths}
+\usetikzlibrary{shapes}
 
 \usepackage{graphicx}
-%\usepackage[usenames, dvipsnames]{color} 
-% https://de.sharelatex.com/learn/Using_colours_in_LaTeX#!#Reference_guide z.B. \color{RubineRed}
-%\usepackage{xcolor}
 
 
 % avoid line overflow
@@ -69,62 +55,12 @@
 }
 
 \usepackage{makecell}
-
-%------------------- ICON Cross
-
-\newcommand{\iconcross}[7]{%
-\begin{tikzpicture}%
-\draw[ultra thick,draw=#2] (-2,-2) -- (2,2);%
-\draw[ultra thick, draw=#2] (-2,2) -- (2,-2);%
-\node[above=0.5em,text=#3] at (0,1) {#1 #4};%
-\node[below=0.5em,text=#3] at (0,-1) {#1 #5};%
-\node[right=0.5em,text=#3] at (1,0) {#1 #6};%
-\node[left=0.5em,text=#3] at (-1,0) {#1 #7};%
-\end{tikzpicture}%
-}
  
 \usepackage{wrapfig}
 \usepackage{calc}
 
-\usepackage{smartdiagram}
-%-----------------------------------------------------
-% set smartdiagram colours, from: https://github.com/Johayon/Data-Scientist-Resume-LaTeX/blob/master/twentysecondcv.cls
-
-
-%-------------------------------------------------------
-\smartdiagramset{
-    bubble center node font = \footnotesize,
-    bubble node font = \footnotesize,
-    % specifies the minimum size of the bubble center node
-    bubble center node size = 0.5cm,
-    %  specifies the minimum size of the bubbles
-    bubble node size = 0.5cm,
-    % specifies which is the distance among the bubble center node and the other bubbles
-    distance center/other bubbles = 0.3cm,
-    % sets the distance from the text to the border of the bubble center node
-    distance text center bubble = 0.5cm,
-    % set center bubble color
-    bubble center node color = pblue,
-    % define the list of colors usable in the diagram
-    set color list = {materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
-    % sets the opacity at which the bubbles are shown
-    bubble fill opacity = 0.6,
-    % sets the opacity at which the bubble text is shown
-    bubble text opacity = 1,
-    description title text width=0.5cm,
-    description title width=0.5cm,
-    description width=5cm,
-    description text width=5cm,
-    descriptive items y sep =1.25,
-    back arrow distance = 0,
-    back arrow disabled = true,
-    border color = white
-}
-
 %--------------------------------------------------- pictures
 \newcommand{\roundpic}[1]{\begin{figure}[H]\tikz  \draw [path picture={ \node at (path picture bounding box.center){\includegraphics[height=3.5cm]{#1}} ;}] (0,2) circle (1.7) ;\end{figure}}
-
-\newcommand{\squarepic}[1]{\begin{figure}[H]\tikz  \draw [path picture={ \node at (path picture bounding box.center){\includegraphics[height=4cm]{#1}} ;}] (0,0) - - (-2,2) - - (0,4) - - (2,2) - - cycle ;\end{figure}}
 
 
 %------------------------------------ pictoFraction
@@ -147,44 +83,6 @@
 \newcommand{\bg}[3]{\colorbox{#1}{\bfseries\color{#2}#3}}
 \newcommand{\bgupper}[3]{\colorbox{#1}{\color{#2}\huge\bfseries\MakeUppercase{#3}}}
 
-%------------------------- Bubble Diagram
-\newcommand{\bubblediagram}[1]{\smartdiagram[bubble diagram]{#1}}
-
-
-\newcommand{\skillbubble}[2]{%
-\begin{tikzpicture}%
-\draw[draw=none,fill=#1] (0,0) circle (0.#2);%
-\end{tikzpicture}%
-}
-
-\newcommand{\hobbyicon}[5]{%
-\begin{tikzpicture}%
-\draw[draw=none,fill=#3] (0,0) circle (0.5);%
-\node[](icon) at (0,0) {#4#1};%
-\node[below=#5,align=center] at (icon) {#2};%
-\end{tikzpicture}
-}
-
-
-
-%-------------------------------------------- rules / separators
-
-\newcommand{\dashrule}[2]{\begin{figure}[H]\begin{minipage}[t]{#1\textwidth}\tikz \draw[loosely dashed,#2] (0pt,0pt) -- (\textwidth,0pt);\end{minipage}\end{figure}}
-
-\newcommand{\dotrule}[2]{\begin{figure}[H]\begin{minipage}[t]{#1\textwidth}\tikz \draw[loosely dotted, ultra thick,#2] (0,0) -- (\textwidth,0);\end{minipage}\end{figure}}
-
-
-%-------------------------------------------------------
-
-
-
-
-\newcommand{\event}[5]{%
-{%
-\draw[draw=black, line width=0.2em,anchor=west] (0,#1) -- (#5,#1);%
-\node[fill=#2,right,inner sep=0.5em] 	at (#5,#1) {\textbf{#3}~~#4 };%
-} % startpunkt #1. Farbe #2, Detaildatum #3, Beschreibung #4, Entfernung von Timeline #5
-}
 
 %---------------------------------------------------------
 \newcommand{\barrule}[3]{%
@@ -247,20 +145,6 @@
     }%
 }
 
-\newcommand{\volunterringitemmmm}[5][] {
-    \makecell[tr]{#3} & {\begin{minipage}[t]{\linewidth}
-        \vspace{-0.75em}
-        \setlength{\columnsep}{0.25cm}
-        \setlength{\intextsep}{0cm}
-        \begin{wrapfigure}{r}{0cm}
-            \includegraphics[width=1cm]{#1}
-        \end{wrapfigure}
-        \textbf{#2} {\scriptsize(#4)}\\
-        #5\\
-        
-    \end{minipage}} \\
-}
-
 \newcommand{\volunterringitem}[5][]{%
     {\makecell[tr]{#3}\hspace{0.2cm}} &
     {\let\href\OldHref\textbf{#2}} {\scriptsize(#4)}\newline
@@ -319,17 +203,6 @@
   \end{tikzpicture}%
 }
 
-\newcommand{\infos}[5]{%
-  \begin{tikzpicture}[baseline=(dot.base)]
-    \node[circle, draw=#3, fill=#3, minimum size=0.42cm, inner sep=0pt] (dot) {};
-    \node at (dot) {\bg{#3}{#4}{\bfseries #1 #2}};
-    % reserve space for text; tweak the subtraction if needed
-    \node[right=0.35cm, align=left,
-          text width=\dimexpr\linewidth-4em\relax] at (dot.east)
-          {\raggedright\small #5};
-  \end{tikzpicture}%
-}
-
 \newcommand{\info}[5]{%
   \begin{tikzpicture}[baseline=(dot.base)]
     % We move the coloring logic into the node styles directly
@@ -353,3 +226,15 @@
 \newcommand{\languageitem}[5]{%
   \bg{#2}{#3}{\bfseries #1} & {#4} & {#5}
 }
+
+% ---------------------------------------------------------------------------
+% Convenience aliases for main.tex
+
+% Sidebar section heading: \sideheading{Title}
+\newcommand{\sideheading}[1]{\bg{cvgreen}{white}{#1}}
+
+% Contact bubble with fixed cvgreen/white colours: \sideinfo{icon}{text}
+\newcommand{\sideinfo}[2]{\infobubble{#1}{cvgreen}{white}{#2}}
+
+% Certificate/award entry with fixed cvgreen/white colours: \cvinfo{month}{year}{text}
+\newcommand{\cvinfo}[3]{\info{#1}{#2}{cvgreen}{white}{#3}}
