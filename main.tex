@@ -7,14 +7,6 @@
 \usepackage[default]{raleway}
 \usepackage[margin=1cm, a4paper]{geometry}
 
-%------------------------------------------------------------------ Variablen
-
-%\newlength{\rightcolwidth}
-%\newlength{\leftcolwidth}
-%\setlength{\leftcolwidth}{0.25\textwidth}
-%\setlength{\rightcolwidth}{0.74\textwidth}
-
-%------------------------------------------------------------------
 \title{Alex Tsvetanov - Curriculum Vitae}
 \author{Alex Tsvetanov}
 \date{July 2025}
@@ -32,10 +24,7 @@
 \AtBeginEnvironment{enumerate}{\color{black}}
 \AtBeginEnvironment{description}{\color{black}}
 
-% (optional) ensure bullets themselves are black too
 \setlist[itemize]{label=\textcolor{black}{\textbullet}}
-
-%\renewcommand{\item}{\color{black}\olditem}
 
 \usepackage{tikzpagenodes}
 \makeatletter
@@ -74,13 +63,7 @@
 \columnratio{0.25}[0.74]
 \begin{paracol}{2}
 \hbadness5000
-%\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\backgroundcolor{g}[rgb]{0.8,1,1} % \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
-
 \paracolbackgroundoptions
-
-% 0.9,0.9,0.9 -- 0.8,0.8,0.8
-
-%\footnotesize
 \small
 {\setasidefontcolour
 \flushright
@@ -92,22 +75,21 @@
 \vspace{-4em}
 
 \flushleft
-\infobubble{\faBirthdayCake}{cvgreen}{white}{12 Aug 2002} \\
-\infobubble{\faMapMarker}{cvgreen}{white}{Bulgaria, Sofia 1750, Mladost 1 R.D.} \\
-\infobubble{\faPhone}{cvgreen}{white}{\href{tel:+359988329931}{+359 988 329 931}} \\
-\infobubble{\faAt}{cvgreen}{white}{\href{mailto:alex\_tsvetanov\_2002@abv.bg}{alex\_tsvetanov\_2002\\@abv.bg}}\\
-\infobubble{\faGithub}{cvgreen}{white}{\href{https://github.com/alex-tsvetanov}{Alex-Tsvetanov}}\\
-\infobubble{\faLinkedin}{cvgreen}{white}{\href{https://www.linkedin.com/in/alex-tsvetanov/}{Alex-Tsvetanov}}\\
-\infobubble{\faGlobe}{cvgreen}{white}{\href{https://alex-tsvetanov.github.io/}{Personal Webpage}}\\
+\sideinfo{\faBirthdayCake}{12 Aug 2002} \\
+\sideinfo{\faMapMarker}{Bulgaria, Sofia 1750, Mladost 1 R.D.} \\
+\sideinfo{\faPhone}{\href{tel:+359988329931}{+359 988 329 931}} \\
+\sideinfo{\faAt}{\href{mailto:alex\_tsvetanov\_2002@abv.bg}{alex\_tsvetanov\_2002\\@abv.bg}}\\
+\sideinfo{\faGithub}{\href{https://github.com/alex-tsvetanov}{Alex-Tsvetanov}}\\
+\sideinfo{\faLinkedin}{\href{https://www.linkedin.com/in/alex-tsvetanov/}{Alex-Tsvetanov}}\\
+\sideinfo{\faGlobe}{\href{https://alex-tsvetanov.github.io/}{Personal Webpage}}\\
 
 \vspace{0.5em}
 
 \flushright
-
-\flushright
+\sideheading{Programming Languages}\\[0.25em]
 \setlength\tabcolsep{0pt}
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}r@{\hskip 0.5em} l}
-    \multicolumn{2}{r}{\bg{cvgreen}{white}{Programming Languages}}\\[1em]
+    %\multicolumn{2}{r}{\sideheading{Programming Languages}}\\[1em]
     \barrule{0.45}{0.5em}{cvgreen} & \textbf{C++17/20/23}\\[0.5em]
     \barrule{0.40}{0.5em}{cvgreen} & \textbf{Python}\\[0.5em]
     \barrule{0.40}{0.5em}{cvgreen} & \textbf{Java}\\[0.5em]
@@ -119,14 +101,14 @@
 \vspace{0.5em}
 
 \flushright
-\bg{cvgreen}{white}{Systems \& APIs} \\[0.25em]
+\sideheading{Systems \& APIs} \\[0.25em]
 IOCP~•~io\_uring~•~kqueue\\[0.25em]
 multithreading \\[0.25em]
 protocols (HTTP \& gRPC) \\[0.25em]
 synchronization ~•~SIMD \\[0.25em]
 
 \vspace{1em}
-\bg{cvgreen}{white}{Tools \& Environments} \\[0.25em]
+\sideheading{Tools \& Environments} \\[0.25em]
 Linux~•~Windows~•~macOS \\[0.25em]
 Kubernetes~•~Docker \\[0.25em]
 CMake~•~Git~•~SonarQube \\[0.25em]
@@ -134,7 +116,7 @@ strace~•~wrk~•~ab~•~CI/CD \\[0.25em]
 
 \vspace{1em}
 
-\bg{cvgreen}{white}{Domains} \\[0.25em]
+\sideheading{Domains} \\[0.25em]
 Algorithms \& Data Structures\\[0.25em]
 Concurrency Design \\[0.25em]
 Distributed Systems \\[0.25em]
@@ -144,8 +126,14 @@ Native Language Bindings
 
 \vspace{1em}
 
-\bg{cvgreen}{white}{Soft skills} \\[0.25em]
-Strategic Planning\\Leadership\\Active Listening\\Public Speaking\\Learning Agility\\Resilience\\Initiative\\[0.25em]
+\sideheading{Soft skills} \\[0.25em]
+Strategic Planning\\
+Leadership\\
+Active Listening\\
+Public Speaking\\
+Learning Agility\\
+Resilience\\
+Initiative\\[0.25em]
 
 %Communication~•~Teamwork \\[0.25em]
 %Leadership~•~Public Speaking \\[0.25em]
@@ -170,7 +158,7 @@ Strategic Planning\\Leadership\\Active Listening\\Public Speaking\\Learning Agil
 
 \vspace{1em}
 \newpage
-\bg{cvgreen}{white}{References} \\
+\sideheading{References} \\
 \vspace{-0.25cm}
 \setlength{\epigraphwidth}{\linewidth}
 \epigraph{\small\it
@@ -189,21 +177,20 @@ As part of the Architecture team, whose main responsibility was to prototype and
 Alex is not only an excellent programmer, but a sociable and motivated colleague with whom it is pleasant to communicate. He is extremely organized and can be relied upon to learn quickly and clearly, as well as to perform complex tasks independently. I am impressed with his attitude towards the work and the quality results he has achieved.
 }{\href{https://www.linkedin.com/in/irina-drencheva-36406745}{Irina Drencheva}\\Software Dev Manager\\Codix\\October 2019}
 
-%\vspace{1em}
 \newpage
-\bg{cvgreen}{white}{Certificates \& Grants} \\[0.25em]
+\sideheading{Certificates \& Grants} \\[0.25em]
 
-\info{Oct}{2025}{cvgreen}{white}{1st place among the university teams in \href{https://www.linkedin.com/posts/\%D0\%B3\%D0\%BE\%D0\%BB\%D1\%8F\%D0\%BC\%D0\%BE\%D1\%82\%D0\%BE-schwarz-\%D0\%BC\%D0\%B5\%D0\%B6\%D0\%B4\%D1\%83\%D1\%87\%D0\%B0\%D1\%81\%D0\%B8\%D0\%B5_theultimatecyberchallenge-hackathon-cybersecurity-activity-7384961855401791488-4wZI}{the cybersecurity hackathon "Big SCHWARZ Interlude"}\newline Sofia, Buglaria}\\
-\info{Oct}{2019}{cvgreen}{white}{Runner-up in \href{https://www.president.bg/}{President's awards "John Atanasoff"}\newline Sofia, Buglaria}\\
-\info{Sep}{2019}{cvgreen}{white}{Top 10 with Headstarter, \href{https://www.cep.si/category/global-education-network-europe/}{"Best Youth Startup 2019" by the Youth Entrepreneurship Accelerator Ustvarjalnik}\newline Ljubljana, Slovenia}\\
-\info{May}{2019}{cvgreen}{white}{1st place with Headstarter, \href{https://teenovator.bg/\%d0\%bd\%d0\%b8\%d0\%b5-\%d1\%81\%d0\%bc\%d0\%b5-headstarter-teenovator/}{National Entrepreneurship Competition by Teenovator}\newline Sofia, Buglaria}\\
-\info{Mar}{2018}{cvgreen}{white}{Bronze medal in \href{https://softuniada.softuni.bg/softuniada-2018/}{Softuniada Competition} in Algorithmic Programming\newline Sofia, Buglaria}
-\info{Jan}{2017}{cvgreen}{white}{Silver medals in U16 of \href{https://softuniada.softuni.bg/softuniada-2017/}{Softuniada Competition} in both Algorithmic Programming and Web and Software Projects\newline Sofia, Buglaria}
-\info{Nov}{2017}{cvgreen}{white}{Bronze medal in \href{https://infos.infosbg.com/contests/IATI/2017}{International Competition in Algorithmic Programming "John Atanasoff"}\newline Sofia, Buglaria}
+\cvinfo{Oct}{2025}{1st place among the university teams in \href{https://www.linkedin.com/posts/\%D0\%B3\%D0\%BE\%D0\%BB\%D1\%8F\%D0\%BC\%D0\%BE\%D1\%82\%D0\%BE-schwarz-\%D0\%BC\%D0\%B5\%D0\%B6\%D0\%B4\%D1\%83\%D1\%87\%D0\%B0\%D1\%81\%D0\%B8\%D0\%B5_theultimatecyberchallenge-hackathon-cybersecurity-activity-7384961855401791488-4wZI}{the cybersecurity hackathon "Big SCHWARZ Interlude"}\newline Sofia, Buglaria}\\
+\cvinfo{Oct}{2019}{Runner-up in \href{https://www.president.bg/}{President's awards "John Atanasoff"}\newline Sofia, Buglaria}\\
+\cvinfo{Sep}{2019}{Top 10 with Headstarter, \href{https://www.cep.si/category/global-education-network-europe/}{"Best Youth Startup 2019" by the Youth Entrepreneurship Accelerator Ustvarjalnik}\newline Ljubljana, Slovenia}\\
+\cvinfo{May}{2019}{1st place with Headstarter, \href{https://teenovator.bg/\%d0\%bd\%d0\%b8\%d0\%b5-\%d1\%81\%d0\%bc\%d0\%b5-headstarter-teenovator/}{National Entrepreneurship Competition by Teenovator}\newline Sofia, Buglaria}\\
+\cvinfo{Mar}{2018}{Bronze medal in \href{https://softuniada.softuni.bg/softuniada-2018/}{Softuniada Competition} in Algorithmic Programming\newline Sofia, Buglaria}
+\cvinfo{Jan}{2017}{Silver medals in U16 of \href{https://softuniada.softuni.bg/softuniada-2017/}{Softuniada Competition} in both Algorithmic Programming and Web and Software Projects\newline Sofia, Buglaria}
+\cvinfo{Nov}{2017}{Bronze medal in \href{https://infos.infosbg.com/contests/IATI/2017}{International Competition in Algorithmic Programming "John Atanasoff"}\newline Sofia, Buglaria}
 
 \vspace{1em}
 
-\bg{cvgreen}{white}{Languages} \\[0.25em]
+\sideheading{Languages} \\[0.25em]
 \begin{tabularx}{\linewidth}{p{3.25em} p{5em} l}
     \languageitem{BG}{cvgreen}{white}{Native}{\pictofraction{\faCircle}{cvgreen}{5}{black!30}{0}{\scriptsize}}\\[0.5em]
     \languageitem{EN}{cvgreen}{white}{C1 (SAT)}{\pictofraction{\faCircle}{cvgreen}{4}{black!30}{1}{\scriptsize}}
@@ -211,7 +198,7 @@ Alex is not only an excellent programmer, but a sociable and motivated colleague
 
 \vspace{1em}
 
-\bg{cvgreen}{white}{Hobbies} \\[0.25em]
+\sideheading{Hobbies} \\[0.25em]
 \begin{flushright}
 Podcasts about A(u)DHD \\
 Brain Health~•~Gym\\
@@ -220,7 +207,7 @@ Rock\&Metal Music
 \end{flushright}
 \vspace{1em}
 
-\bg{cvgreen}{white}{My mindset}\\
+\sideheading{My mindset}\\
 \vspace{-1em}
 \epigraph{\small
 If it breaks under pressure, it was already broken.
@@ -228,9 +215,9 @@ If it breaks under pressure, it was already broken.
 
 \vspace{1em}
 
-\bg{cvgreen}{white}{Find me} \\[0.25em]
-\infobubble{\faFacebook}{cvgreen}{white}{\href{https://www.facebook.com/alex.tsvetanov.2002}{alex.tsvetanov.2002}}\\
-\infobubble{\faInstagram}{cvgreen}{white}{\href{https://www.instagram.com/tsvetanov__alex/}{tsvetanov\_\_alex}}\\
+\sideheading{Find me} \\[0.25em]
+\sideinfo{\faFacebook}{\href{https://www.facebook.com/alex.tsvetanov.2002}{alex.tsvetanov.2002}}\\
+\sideinfo{\faInstagram}{\href{https://www.instagram.com/tsvetanov__alex/}{tsvetanov\_\_alex}}\\
 
 \phantom{turn the page}
 \phantom{turn the page}
@@ -246,13 +233,8 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
 \end{flushleft}
 
 \section*{Experience}
-%\begin{tabularx}{\linewidth}{r@{\extracolsep{\fill}} | X p{1cm}}
-% Define the column widths manually since X doesn't work here.
-% We use 0.85\linewidth for the main text and 1cm for the logo.
-\tablehead{} % Leave empty if you don't want a repeating header
+\tablehead{}
 \tabletail{}
-
-%\begin{supertabular}{p{0.125\linewidth} | p{0.825\linewidth}}
 \begin{tabularx}{\linewidth}{p{0.125\linewidth} | X p{1cm}}
     \cvevent
         {Present}
@@ -301,43 +283,9 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         \item Maintained and extended high-stakes C++ "night jobs" and background processing services, ensuring data integrity for global financial close cycles.
         \item Implemented 100+ feature extensions within a shared codebase, balancing client-specific requirements with a unified product architecture.
     \end{itemize}}{images/companies/codix.png}\\
-    \iffalse
-        \cvevent{July 2025}{July 2023}{C++ Engineer}{Full-time}{Hybrid}{\href{https://www.chaos.com/}{Chaos Group}}{Sofia, Bulgaria \color{cvred}}
-        {\begin{itemize}[nosep, leftmargin=*]
-            \item Led the implementation of two major features for V-Ray for SketchUp, covering the full design, coding, and integration of a scalable architecture, improving the frame rate by 5x through SIMD-based computations, translating from 12 fps stutter to a smooth 60 fps.
-            \item Refactored legacy rendering subsystems for thread safety and cache locality and initiated the open-sourcing of the SketchUp-CPP-API library for type-safe plugin development (\href{https://github.com/ChaosGroup/sketchup-cpp-api}{GitHub link}).
-            \item Improved build stability and CI runtime by approximately 20\% through static-analysis integration.
-        \end{itemize}}{chaos.png}\\
-        \cvevent{July 2023}{Sep 2022}{Software Architect}{Full-time}{Remote}{\href{https://www.scia.net/en}{SCIA}}{Leuven, Belgium \color{cvred}}
-        {\begin{itemize}[nosep, leftmargin=*]
-            \item Part of the Software Architecture team
-            \item Integrated decades-old code with modern technologies to develop fully functional prototypes.
-            \item Contributed to the team's adoption of scrum practices for project management.
-        \end{itemize}}{scia.png}\\
-        \cvevent{Sep 2022}{July 2022}{C++ Back-end Developer}{Full-time}{Hybrid}{\href{https://careers.flutterinternational.com/our-brands/pokerstars/}{PokerStars}}{Sofia, Bulgaria \color{cvred}}
-        {\begin{itemize}[nosep, leftmargin=*]
-            \item Implementing requests from subsidiaries and customers to enhance platform functionality.
-            \item Ensuring promotions target eligible players and prevent gambling addiction.
-            \item Collaborating with marketing team to execute responsible gambling initiatives effectively.
-        \end{itemize}}{pokerstars.png}\\
-        \cvevent{July 2022}{June 2021}{Full-stack Web Developer (Java \& Angular)}{Full-time}{Hybrid}{\href{https://www.vmware.com/}{VMware}}{Sofia, Bulgaria \color{cvred}}
-        {\begin{itemize}[nosep, leftmargin=*]
-            \item Delivered two complete product features and several client customizations on the Solution Builder platform.
-            \item Utilized Java backend microservices and Angular front-end components to support thousands of users.
-            \item Revamped SQL queries in order to optimize the content delivery for the thousands of end users
-        \end{itemize}}{vmware.png}\\
-        \cvevent{Sep 2019}{May 2019}{C++ Software Developer}{Part-time}{On-site}{\href{https://www.codix.eu/en}{Codix}}{Sofia, Bulgaria \color{cvred}}
-        {\begin{itemize}[nosep, leftmargin=*]
-            \item Developing and maintaining back-end services for 9 international banks, utilizing C/C++ and SQL.
-            \item Implementing over 100 customer requests for modifications and extensions of the software.
-            \item Collaborating with international banking clients to ensure their software needs are met and their systems are optimized for performance and security
-        \end{itemize}}{codix.png}\\
-    \fi
-%\end{supertabular}
 \end{tabularx}
 
 \section*{Education}
-%\begin{supertabular}{p{0.125\linewidth} | p{0.7\linewidth} p{1cm}}
 \begin{tabularx}{\linewidth}{p{0.125\linewidth} | X p{1cm}}
     \cvdegree
         {June 2026}
@@ -380,12 +328,10 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {\href{https://smg.bg/}{Sofia High School of Mathematics, Bulgaria}}
         {Full-time, Grade: Excellent}
         {images/education/SMG-logo.png} \\
-%\end{supertabular}
 \end{tabularx}
 
 \section*{Trainings}
 \begin{tabularx}{\linewidth}{p{0.125\linewidth} | X p{1cm}}
-%\begin{supertabular}{p{0.125\linewidth} | p{0.7\linewidth} p{1cm}}
     \cvcourse
         {Sep 2018}
         {Aug 2018}
@@ -455,13 +401,11 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {\href{https://www.telerikacademy.com/}{Telerik Academy}}
         {Hands-on programming fundamentals and problem-solving using C++. Built strong foundations in syntax, logic, and algorithmic thinking from an early age.}
         {images/trainings/telerik.jpg} \\
-%\end{supertabular}
 \end{tabularx}
 
 \section*{Publications}
 \begin{tabularx}{\linewidth}{p{0.125\linewidth} | X}
- %\begin{tabularx}{\linewidth}{p{0.125\linewidth} | X}
-     \makecell[tr]{Nov 2025} & \textbf{Optimizing Asynchronous Event Dispatch in Modern C++ Publish/Subscribe Systems}\\
+    \makecell[tr]{Nov 2025} & \textbf{Optimizing Asynchronous Event Dispatch in Modern C++ Publish/Subscribe Systems}\\
     & TELECOM 2025, Sofia, Bulgaria~•~\href{https://doi.org/10.1109/TELECOM66943.2025.11304088}{10.1109/TELECOM66943.2025.11304088} \\
     & Alex Tsvetanov \\[0.5em]
     \makecell[tr]{June 2025} & \textbf{Modern C++ Publish/Subscribe Pattern: Design, Challenges, and Implementation}\\
@@ -524,45 +468,16 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {on-site, Sofia, Bulgaria}
         {Developed the web interface for an experimental platform simulating emotional response theory based on Silvan Tomkins' work. Contributed to the visualization and interaction layer of the research tool used in academic experiments.}
 \end{tabularx}
-%\vspace{0.375cm}
-
-%\begin{minipage}[t]{0.4\textwidth}
-%    \section*{Certificates \& Grants}
-%    \begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.75\textwidth}}
-%    2025 & 1st place among the university teams in \href{https://www.linkedin.com/posts/\%D0\%B3\%D0\%BE\%D0\%BB\%D1\%8F\%D0\%BC\%D0\%BE\%D1\%82\%D0\%BE-schwarz-\%D0\%BC\%D0\%B5\%D0\%B6\%D0\%B4\%D1\%83\%D1\%87\%D0\%B0\%D1\%81\%D0\%B8\%D0\%B5_theultimatecyberchallenge-hackathon-cybersecurity-activity-7384961855401791488-4wZI}{the cybersecurity hackathon "Big SCHWARZ Interlude"} \\
-%    2019 & Runner-up in President's awards "John Atanasov"  \\
-%    2019 & 1st place, National Entrepreneurship Competition with Headstarter \\
-%    2019 & Top 10 European Student Startup Competition with Headstarter \\
-%    2017 & Bronze medal in International Competition in Algorithmic Programming "John Atanasov"
-
-%    \end{tabular}
-%\end{minipage}
-%\hfill
-%\begin{minipage}[t]{0.3\textwidth}
-%    \section*{Languages}
-%    \begin{tabular}{l | ll}
-%        \textbf{Bulgarian} & Native & {\pictofraction{\faCircle}{cvgreen}{5}{black!30}{0}{\tiny}} \\
-%        \textbf{English} & C1 & \pictofraction{\faCircle}{cvgreen}{4}{black!30}{1}{\tiny}
-%    \end{tabular}
-%    \\[0.5em]
-%    \section*{Hobbies}
-%    Podcasts about Neurodivergency \& Brain health ~•~
-%    Gym ~•~Football~•~Table tennis
-%\end{minipage}
-
-%\vfill
-%\vspace{5cm}
-
 %----------------------------------------------------------------------------------------
-%	FINAL FOOTER
+%   FINAL FOOTER
 %----------------------------------------------------------------------------------------
-%\setlength{\parindent}{0pt}
-%\begin{minipage}[t]{\rightcolwidth}
-%\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
-%{\footnotesize Alex Tsvetanov \icon{\faEnvelopeO}{cvgreen}{} \href{mailto:alex\_tsvetanov\_2002@abv.bg}{alex\_tsvetanov\_2002@abv.bg} \icon{\faMapMarker}{cvgreen}{} Sofia, Bulgaria \icon{\faPhone}{cvgreen}{} \href{tel:+359988329931}{+359 988 329 931}% \newline\icon{\faAt}{cvgreen}{} \protect\url{jack@sparrow.com}
-%}
-%\end{center}
-%\end{minipage}
+\setlength{\parindent}{0pt}
+\begin{minipage}[t]{\linewidth}
+\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
+{\footnotesize Alex Tsvetanov \icon{\faEnvelopeO}{cvgreen}{} \href{mailto:alex\_tsvetanov\_2002@abv.bg}{alex\_tsvetanov\_2002@abv.bg} \icon{\faMapMarker}{cvgreen}{} Sofia, Bulgaria \icon{\faPhone}{cvgreen}{} \href{tel:+359988329931}{+359 988 329 931}% \newline\icon{\faAt}{cvgreen}{} \protect\url{jack@sparrow.com}
+}
+\end{center}
+\end{minipage}
 
 \end{paracol}
 
