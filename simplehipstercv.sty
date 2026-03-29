@@ -1,0 +1,355 @@
+
+\usepackage[T1]{fontenc}
+
+\usepackage{fontawesome}
+\usepackage[
+    pdftitle={Curriculum Vitae — Alex Tsvetanov},
+    pdfauthor={Alex Tsvetanov},
+    pdfcreator={Alex Tsvetanov},
+    pdfproducer={LaTeX},
+    colorlinks=true,
+    urlcolor=primaryColor,
+    pdfkeywords={C++, Golang, Kubernetes, concurrency, distributed systems, debugging,
+                 performance optimization, scalability, leadership, teamwork}
+]{hyperref}
+\setlength{\parindent}{0cm}
+\usepackage{paracol}
+\usepackage{ifthen}
+
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{smartdiagram}
+\usepackage{float}
+
+\usepackage{array}
+%\setlength\extrarowheight{1.5em} % adds some spacing between the lines of the CV's tabulars
+% not used here as not to interfer with other tables
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{fadings}
+\usetikzlibrary{calc}
+
+\usetikzlibrary{shapes.misc,positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{backgrounds} 
+\usetikzlibrary{shadings}
+\usetikzlibrary{calendar} 
+\usetikzlibrary{er}
+\usetikzlibrary{patterns} % horizontal lines, vertical lines, north east lines, north west lines, grid, crosshatch, dots, crosshatch dots, fivepointed stars, sixpointed stars, bricks
+\usetikzlibrary{shapes} 
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations}
+\usetikzlibrary{topaths}
+
+\usepackage{graphicx}
+%\usepackage[usenames, dvipsnames]{color} 
+% https://de.sharelatex.com/learn/Using_colours_in_LaTeX#!#Reference_guide z.B. \color{RubineRed}
+%\usepackage{xcolor}
+
+
+% avoid line overflow
+\setlength{\emergencystretch}{2pt}
+%---------------------------------------------------------------------------------
+
+\usepackage{titlesec} % Allows creating custom \sections
+
+% Format of the section titles
+\titleformat{\section}{
+\scshape\Large\raggedright}{}{0em}{}[\titlerule] % smallcaps, Large, continuous line - looks better if two columns, might look a bit too dramatic if just one ;) 
+\titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around titles {<left spacing>}{<before spacing>}{<after spacing>}
+%----------------------------------------------------
+
+ \newcommand{\cvkeyword}[3]{
+ \colorbox{#2}{\textcolor{#3}{#1}} \phantom{}%
+ }
+ 
+%------------------------
+\newcommand{\cvtag}[1]{% from alta-cv: https://www.overleaf.com/latex/templates/altacv-template/trgqjpwnmtgv
+  \tikz[baseline]\node[draw=black!40,rounded corners,inner sep=0.4em]{\color{black!50}#1};
+}
+
+\usepackage{makecell}
+
+%------------------- ICON Cross
+
+\newcommand{\iconcross}[7]{%
+\begin{tikzpicture}%
+\draw[ultra thick,draw=#2] (-2,-2) -- (2,2);%
+\draw[ultra thick, draw=#2] (-2,2) -- (2,-2);%
+\node[above=0.5em,text=#3] at (0,1) {#1 #4};%
+\node[below=0.5em,text=#3] at (0,-1) {#1 #5};%
+\node[right=0.5em,text=#3] at (1,0) {#1 #6};%
+\node[left=0.5em,text=#3] at (-1,0) {#1 #7};%
+\end{tikzpicture}%
+}
+ 
+\usepackage{wrapfig}
+\usepackage{calc}
+
+\usepackage{smartdiagram}
+%-----------------------------------------------------
+% set smartdiagram colours, from: https://github.com/Johayon/Data-Scientist-Resume-LaTeX/blob/master/twentysecondcv.cls
+
+
+%-------------------------------------------------------
+\smartdiagramset{
+    bubble center node font = \footnotesize,
+    bubble node font = \footnotesize,
+    % specifies the minimum size of the bubble center node
+    bubble center node size = 0.5cm,
+    %  specifies the minimum size of the bubbles
+    bubble node size = 0.5cm,
+    % specifies which is the distance among the bubble center node and the other bubbles
+    distance center/other bubbles = 0.3cm,
+    % sets the distance from the text to the border of the bubble center node
+    distance text center bubble = 0.5cm,
+    % set center bubble color
+    bubble center node color = pblue,
+    % define the list of colors usable in the diagram
+    set color list = {materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
+    % sets the opacity at which the bubbles are shown
+    bubble fill opacity = 0.6,
+    % sets the opacity at which the bubble text is shown
+    bubble text opacity = 1,
+    description title text width=0.5cm,
+    description title width=0.5cm,
+    description width=5cm,
+    description text width=5cm,
+    descriptive items y sep =1.25,
+    back arrow distance = 0,
+    back arrow disabled = true,
+    border color = white
+}
+
+%--------------------------------------------------- pictures
+\newcommand{\roundpic}[1]{\begin{figure}[H]\tikz  \draw [path picture={ \node at (path picture bounding box.center){\includegraphics[height=3.5cm]{#1}} ;}] (0,2) circle (1.7) ;\end{figure}}
+
+\newcommand{\squarepic}[1]{\begin{figure}[H]\tikz  \draw [path picture={ \node at (path picture bounding box.center){\includegraphics[height=4cm]{#1}} ;}] (0,0) - - (-2,2) - - (0,4) - - (2,2) - - cycle ;\end{figure}}
+
+
+%------------------------------------ pictoFraction
+\newcommand{\icon}[3]{{#3\color{#2}#1}~}
+%------------------- pictogram Fraction: pictoFraction
+\newcommand{\pictofraction}[6]{%
+  \pgfmathtruncatemacro{\filled}{#3}%
+  \pgfmathtruncatemacro{\empty}{#5}%
+  \ifnum\filled>0
+    \foreach \n in {1,...,\filled}{\icon{#1}{#2}{#6}}%
+  \fi
+  \ifnum\empty>0
+    \foreach \n in {1,...,\empty}{\icon{#1}{#4}{#6}}%
+  \fi
+}
+
+
+
+%----------------------------------------------------- font highlighting / boxes with background color 
+\newcommand{\bg}[3]{\colorbox{#1}{\bfseries\color{#2}#3}}
+\newcommand{\bgupper}[3]{\colorbox{#1}{\color{#2}\huge\bfseries\MakeUppercase{#3}}}
+
+%------------------------- Bubble Diagram
+\newcommand{\bubblediagram}[1]{\smartdiagram[bubble diagram]{#1}}
+
+
+\newcommand{\skillbubble}[2]{%
+\begin{tikzpicture}%
+\draw[draw=none,fill=#1] (0,0) circle (0.#2);%
+\end{tikzpicture}%
+}
+
+\newcommand{\hobbyicon}[5]{%
+\begin{tikzpicture}%
+\draw[draw=none,fill=#3] (0,0) circle (0.5);%
+\node[](icon) at (0,0) {#4#1};%
+\node[below=#5,align=center] at (icon) {#2};%
+\end{tikzpicture}
+}
+
+
+
+%-------------------------------------------- rules / separators
+
+\newcommand{\dashrule}[2]{\begin{figure}[H]\begin{minipage}[t]{#1\textwidth}\tikz \draw[loosely dashed,#2] (0pt,0pt) -- (\textwidth,0pt);\end{minipage}\end{figure}}
+
+\newcommand{\dotrule}[2]{\begin{figure}[H]\begin{minipage}[t]{#1\textwidth}\tikz \draw[loosely dotted, ultra thick,#2] (0,0) -- (\textwidth,0);\end{minipage}\end{figure}}
+
+
+%-------------------------------------------------------
+
+
+
+
+\newcommand{\event}[5]{%
+{%
+\draw[draw=black, line width=0.2em,anchor=west] (0,#1) -- (#5,#1);%
+\node[fill=#2,right,inner sep=0.5em] 	at (#5,#1) {\textbf{#3}~~#4 };%
+} % startpunkt #1. Farbe #2, Detaildatum #3, Beschreibung #4, Entfernung von Timeline #5
+}
+
+%---------------------------------------------------------
+\newcommand{\barrule}[3]{%
+  \begingroup
+  \dimen0=#1\linewidth\relax
+  \ifdim\dimen0>0.95\linewidth \dimen0=0.95\linewidth\fi
+  {\color{#3}\rule[\baselineskip]{\dimen0}{#2}}%
+  \endgroup
+}
+\usepackage{multirow}
+\newcommand{\cvevent}[9]{
+{
+    \makecell[tr]{#2\\#1}\hspace{0.2cm}} &
+    \textbf{#3}\newline\textsc{#6} $\cdot$ #4 $\cdot$ #5 $\cdot$ {#7 ~\faMapMarker}
+    {\vspace{-0.375cm}\color{black!70}\footnotesize\newline #8} &
+    \raisebox{-0.7\height}
+    {\includegraphics[width=1cm]{#9}}
+}
+
+\newcommand{\cvcourse}[8]{
+    {\makecell[tr]{#2\\#1}\hspace{0.2cm}} & 
+    \textbf{#3} {\scriptsize(#4)}\newline\textsc{#5} $\cdot$ {#6}\newline{\color{black!70}\scriptsize #7}\vspace{0.1em} &
+    \raisebox{-0.7\height}{\includegraphics[width=1cm]{#8}}
+}
+
+\newcommand{\cvdegree}[7]{%
+  {\makecell[tr]{#2\\#1}\hspace{0.2cm}} & 
+  \textbf{#3}\newline
+  \textsc{#4} $\cdot$ {#5}%
+  \ifstrempty{#6}{}{% 
+    \newline{\color{black!70}\scriptsize #6}% Only prints if #6 is NOT empty
+  }\vspace{0.5em} & 
+  \raisebox{-0.7\height}{\includegraphics[width=1cm]{#7}}%
+}
+
+\usepackage{xparse}
+\NewDocumentCommand{\projectitem}{O{} O{} m m m m}{%
+    % #1 = note (e.g. "part of a patent application"), #2 = logo filename (optional)
+    % #3 = url, #4 = project name, #5 = subtitle, #6 = items
+    \ifstrempty{#2}{%
+        \noindent\makebox[\linewidth]{%
+            \textbf{\href{#3}{#4} | #5}%
+            \hfill
+            \ifstrempty{#1}{}{\textit{#1}}%
+        }%
+        \begin{itemize}\color{black!70}#6\end{itemize}%
+    }{%
+        \noindent\begin{tabularx}{\linewidth}{X p{1cm}}
+            \begin{minipage}[t]{\hsize}%
+                \noindent\makebox[\hsize]{%
+                    \textbf{\href{#3}{#4} | #5}%
+                    \hfill
+                    \ifstrempty{#1}{}{\textit{#1}}%
+                }%
+                \begin{itemize}\color{black!70}#6\end{itemize}%
+            \end{minipage}%
+            &
+            \begin{minipage}[t]{1cm}\raisebox{-0.7\height}{\includegraphics[width=1cm]{#2}}\end{minipage}\\
+        \end{tabularx}%
+    }%
+}
+
+\newcommand{\volunterringitemmmm}[5][] {
+    \makecell[tr]{#3} & {\begin{minipage}[t]{\linewidth}
+        \vspace{-0.75em}
+        \setlength{\columnsep}{0.25cm}
+        \setlength{\intextsep}{0cm}
+        \begin{wrapfigure}{r}{0cm}
+            \includegraphics[width=1cm]{#1}
+        \end{wrapfigure}
+        \textbf{#2} {\scriptsize(#4)}\\
+        #5\\
+        
+    \end{minipage}} \\
+}
+
+\newcommand{\volunterringitem}[5][]{%
+    {\makecell[tr]{#3}\hspace{0.2cm}} &
+    {\let\href\OldHref\textbf{#2}} {\scriptsize(#4)}\newline
+    {\color{black!70} #5}\vspace{0.1em} &
+    \raisebox{-0.7\height}{\includegraphics[width=1cm]{#1}}\\
+}
+
+
+% -----------------------------------------------------------------------------------
+
+\newcommand{\simpleheader}[5]{
+\tikz[remember picture,overlay] {%
+\node[rectangle, fill=#1, anchor=north, minimum width=\paperwidth, minimum height=2.2cm](header) at (current page.north){};%
+\node[draw=none, align=left](name) at (header) {%
+{\Huge \color{#5} \textbf{#2 #3} }%
+};%
+\node[draw=none, below](description) at (name.south) {\color{white}#4};% 
+}\vspace{-2.15cm}%
+}
+
+
+\usepackage[normalem]{ulem}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black, urlcolor=black, citecolor=black,
+  breaklinks=true
+}
+\let\OldHref\href
+\renewcommand{\href}[2]{\OldHref{#1}{\uline{#2}}}
+
+\DeclareUrlCommand\ulpath{%
+  \def\UrlFont{\ttfamily}%
+  \def\UrlLeft{\uline\bgroup}%
+  \def\UrlRight{\egroup}%
+}
+
+\newcommand{\emaillink}[1]{\OldHref{mailto:#1}{#1}}
+
+\makeatletter
+\def\UrlBreaks{%
+  \do\/\do\-%
+  \do\.\do\@\do\_\do\+\do\=\do\?\do\&\do\%\do\#\do\~\do\:
+}
+\makeatother
+\Urlmuskip=0mu plus 1mu
+
+% Replace the original \infobubble with a wrapped version
+\newcommand{\infobubble}[4]{%
+  \begin{tikzpicture}[baseline=(dot.base)]
+    \node[circle, draw=#2, fill=#2, minimum size=0.42cm, inner sep=0pt] (dot) {};
+    \node at (dot) {\color{#3}\bfseries\footnotesize #1};
+    % reserve space for text; tweak the subtraction if needed
+    \node[right=0.28cm, align=left,
+          text width=\dimexpr\linewidth-2em\relax] at (dot.east)
+          {\raggedright\small\ttfamily #4};
+  \end{tikzpicture}%
+}
+
+\newcommand{\infos}[5]{%
+  \begin{tikzpicture}[baseline=(dot.base)]
+    \node[circle, draw=#3, fill=#3, minimum size=0.42cm, inner sep=0pt] (dot) {};
+    \node at (dot) {\bg{#3}{#4}{\bfseries #1 #2}};
+    % reserve space for text; tweak the subtraction if needed
+    \node[right=0.35cm, align=left,
+          text width=\dimexpr\linewidth-4em\relax] at (dot.east)
+          {\raggedright\small #5};
+  \end{tikzpicture}%
+}
+
+\newcommand{\info}[5]{%
+  \begin{tikzpicture}[baseline=(dot.base)]
+    % We move the coloring logic into the node styles directly
+    \node[
+        rectangle, 
+        fill=#3,                % Background color of the circle
+        text=#4,                % Text color
+        minimum width=0.8cm,    % Rectangles need more width for 2-line text
+        minimum height=0.5cm,   % Height to accommodate #1\\#2
+        inner sep=2pt, 
+        align=center,           % Essential for the \\ to work
+        font=\bfseries\footnotesize     % Bold and tiny to fit the space
+    ] (dot) {\ifstrempty{#1}{}{#1\\}#2};
+    
+    \node[right=0.125em, align=left,
+          text width=\dimexpr\linewidth-3em\relax] at (dot.east)
+          {\raggedright\small #5};
+  \end{tikzpicture}%
+}
+
+\newcommand{\languageitem}[5]{%
+  \bg{#2}{#3}{\bfseries #1} & {#4} & {#5}
+}
