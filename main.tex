@@ -1,0 +1,569 @@
+\documentclass[pastel]{simplehipstercv}
+
+
+% available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
+% withoutsidebar
+\usepackage[utf8]{inputenc}
+\usepackage[default]{raleway}
+\usepackage[margin=1cm, a4paper]{geometry}
+
+%------------------------------------------------------------------ Variablen
+
+%\newlength{\rightcolwidth}
+%\newlength{\leftcolwidth}
+%\setlength{\leftcolwidth}{0.25\textwidth}
+%\setlength{\rightcolwidth}{0.74\textwidth}
+
+%------------------------------------------------------------------
+\title{Alex Tsvetanov - Curriculum Vitae}
+\author{Alex Tsvetanov}
+\date{July 2025}
+
+\pagestyle{empty}
+
+\usepackage{enumitem} % for controlling list formatting
+\usepackage{xcolor}   % for text colors if not already loaded
+\usepackage{etoolbox} % gives AtBeginEnvironment
+% 1) No indent for all lists
+\setlist{leftmargin=10pt}
+
+% 2) Force list *content* to black everywhere
+\AtBeginEnvironment{itemize}{\color{black}}
+\AtBeginEnvironment{enumerate}{\color{black}}
+\AtBeginEnvironment{description}{\color{black}}
+
+% (optional) ensure bullets themselves are black too
+\setlist[itemize]{label=\textcolor{black}{\textbullet}}
+
+%\renewcommand{\item}{\color{black}\olditem}
+
+\usepackage{tikzpagenodes}
+\makeatletter
+\AddToHook{shipout/background}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[fill={rgb,1:red,0.9;green,0.9;blue,0.9}] % or replace with whatever shade matches sidebar
+      (current page.north west)
+      rectangle
+      ([xshift=\dimexpr 1cm + 0.25\textwidth + 0.3125cm]current page.south west);
+  \end{tikzpicture}%
+}
+\makeatother
+
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{supertabular}
+\usepackage{epigraph} 
+
+\begin{document}
+
+
+\thispagestyle{empty}
+%-------------------------------------------------------------
+
+\section*{Start}
+
+\simpleheader{headercolour}{Alex}{Tsvetanov}{Software Engineer}{white}
+
+%------------------------------------------------
+
+% this has to be here so the paracols starts..
+\subsection*{}
+\vspace{4em}
+
+\setlength{\columnsep}{1.25cm}
+\columnratio{0.25}[0.74]
+\begin{paracol}{2}
+\hbadness5000
+%\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\backgroundcolor{g}[rgb]{0.8,1,1} % \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
+
+\paracolbackgroundoptions
+
+% 0.9,0.9,0.9 -- 0.8,0.8,0.8
+
+%\footnotesize
+\small
+{\setasidefontcolour
+\flushright
+\vspace{-1em}
+\begin{center}
+    \roundpic{images/profile/3-square.jpg}
+\end{center}
+
+\vspace{-4em}
+
+\flushleft
+\infobubble{\faBirthdayCake}{cvgreen}{white}{12 Aug 2002} \\
+\infobubble{\faMapMarker}{cvgreen}{white}{Bulgaria, Sofia 1750, Mladost 1 R.D.} \\
+\infobubble{\faPhone}{cvgreen}{white}{\href{tel:+359988329931}{+359 988 329 931}} \\
+\infobubble{\faAt}{cvgreen}{white}{\href{mailto:alex\_tsvetanov\_2002@abv.bg}{alex\_tsvetanov\_2002\\@abv.bg}}\\
+\infobubble{\faGithub}{cvgreen}{white}{\href{https://github.com/alex-tsvetanov}{Alex-Tsvetanov}}\\
+\infobubble{\faLinkedin}{cvgreen}{white}{\href{https://www.linkedin.com/in/alex-tsvetanov/}{Alex-Tsvetanov}}\\
+\infobubble{\faGlobe}{cvgreen}{white}{\href{https://alex-tsvetanov.github.io/}{Personal Webpage}}\\
+
+\vspace{0.5em}
+
+\flushright
+
+\flushright
+\setlength\tabcolsep{0pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}r@{\hskip 0.5em} l}
+    \multicolumn{2}{r}{\bg{cvgreen}{white}{Programming Languages}}\\[1em]
+    \barrule{0.45}{0.5em}{cvgreen} & \textbf{C++17/20/23}\\[0.5em]
+    \barrule{0.40}{0.5em}{cvgreen} & \textbf{Python}\\[0.5em]
+    \barrule{0.40}{0.5em}{cvgreen} & \textbf{Java}\\[0.5em]
+    \barrule{0.40}{0.5em}{cvgreen} & \textbf{C\#.NET}\\[0.5em]
+    \barrule{0.35}{0.5em}{cvgreen} & \textbf{TypeScript}\\[0.5em]
+    \barrule{0.30}{0.5em}{cvgreen} & \textbf{Golang}
+\end{tabular*}
+
+\vspace{0.5em}
+
+\flushright
+\bg{cvgreen}{white}{Systems \& APIs} \\[0.25em]
+IOCP~•~io\_uring~•~kqueue\\[0.25em]
+multithreading \\[0.25em]
+protocols (HTTP \& gRPC) \\[0.25em]
+synchronization ~•~SIMD \\[0.25em]
+
+\vspace{1em}
+\bg{cvgreen}{white}{Tools \& Environments} \\[0.25em]
+Linux~•~Windows~•~macOS \\[0.25em]
+Kubernetes~•~Docker \\[0.25em]
+CMake~•~Git~•~SonarQube \\[0.25em]
+strace~•~wrk~•~ab~•~CI/CD \\[0.25em]
+
+\vspace{1em}
+
+\bg{cvgreen}{white}{Domains} \\[0.25em]
+Algorithms \& Data Structures\\[0.25em]
+Concurrency Design \\[0.25em]
+Distributed Systems \\[0.25em]
+System Architecture \\[0.25em]
+Low-latency Optimization \\[0.25em]
+Native Language Bindings
+
+\vspace{1em}
+
+\bg{cvgreen}{white}{Soft skills} \\[0.25em]
+Strategic Planning\\Leadership\\Active Listening\\Public Speaking\\Learning Agility\\Resilience\\Initiative\\[0.25em]
+
+%Communication~•~Teamwork \\[0.25em]
+%Leadership~•~Public Speaking \\[0.25em]
+%Active Listening~•~Feedback \\[0.25em]
+%Cultural Sensitivity \\[0.25em]
+%Resilience~•~Flexibility \\[0.25em]
+%Learning Agility \\[0.25em]
+%Self-motivation~•~Initiative \\[0.25em]
+%Problem-solving \\[0.25em]
+%Critical Thinking \\[0.25em]
+%Strategic Planning \\[0.25em]
+%Works Under Pressure \\[0.25em]
+%Creative Thinking \\[0.25em]
+%Organization~•~Prioritization \\[0.25em]
+%Reliability~•~Accountability \\[0.25em]
+%Continuous Learning \\[0.25em]
+%Curiosity~•~Growth Mindset \\[0.25em]
+%Self-directed Learning \\[0.25em]
+%Professionalism~•~Discipline \\[0.25em]
+%Data Interpretation \\[0.25em]
+%Risk Assessment \\[0.25em]
+
+\vspace{1em}
+\newpage
+\bg{cvgreen}{white}{References} \\
+\vspace{-0.25cm}
+\setlength{\epigraphwidth}{\linewidth}
+\epigraph{\small\it
+Alex consistently demonstrates outstanding technical
+skills and a fearless approach to complex challenges.
+During our time together, he was instrumental in implementing
+key features and driving significant infrastructure improvements,
+directly contributing to the success and stability of our projects.
+}{\href{https://www.linkedin.com/in/noel-warren-350994216}{Noel Warren}\\ Senior Software Developer\\Chaos\\June 2025}
+\vspace{-0.75cm}
+\epigraph{\small\it
+As part of the Architecture team, whose main responsibility was to prototype and introduce innovations, Alex Tsvetanov excelled as a fast learner. No matter which technology we picked (gRPC, Redis, vcpkg), he was always able to quickly learn it and directly build a fully functional prototype. And that was never easy, as he often needed to combine code that was tens of years old with recent technology that was not even suitable for our target platform.
+}{\href{https://www.linkedin.com/in/jan-st\%C5\%99\%C3\%ADtesk\%C3\%BD-429b5769}{Jan Stříteský}\\ Lead Software Architect\\SCIA\\April 2023}
+\vspace{-0.75cm}
+\epigraph{\small\it
+Alex is not only an excellent programmer, but a sociable and motivated colleague with whom it is pleasant to communicate. He is extremely organized and can be relied upon to learn quickly and clearly, as well as to perform complex tasks independently. I am impressed with his attitude towards the work and the quality results he has achieved.
+}{\href{https://www.linkedin.com/in/irina-drencheva-36406745}{Irina Drencheva}\\Software Dev Manager\\Codix\\October 2019}
+
+%\vspace{1em}
+\newpage
+\bg{cvgreen}{white}{Certificates \& Grants} \\[0.25em]
+
+\info{Oct}{2025}{cvgreen}{white}{1st place among the university teams in \href{https://www.linkedin.com/posts/\%D0\%B3\%D0\%BE\%D0\%BB\%D1\%8F\%D0\%BC\%D0\%BE\%D1\%82\%D0\%BE-schwarz-\%D0\%BC\%D0\%B5\%D0\%B6\%D0\%B4\%D1\%83\%D1\%87\%D0\%B0\%D1\%81\%D0\%B8\%D0\%B5_theultimatecyberchallenge-hackathon-cybersecurity-activity-7384961855401791488-4wZI}{the cybersecurity hackathon "Big SCHWARZ Interlude"}\newline Sofia, Buglaria}\\
+\info{Oct}{2019}{cvgreen}{white}{Runner-up in \href{https://www.president.bg/}{President's awards "John Atanasoff"}\newline Sofia, Buglaria}\\
+\info{Sep}{2019}{cvgreen}{white}{Top 10 with Headstarter, \href{https://www.cep.si/category/global-education-network-europe/}{"Best Youth Startup 2019" by the Youth Entrepreneurship Accelerator Ustvarjalnik}\newline Ljubljana, Slovenia}\\
+\info{May}{2019}{cvgreen}{white}{1st place with Headstarter, \href{https://teenovator.bg/\%d0\%bd\%d0\%b8\%d0\%b5-\%d1\%81\%d0\%bc\%d0\%b5-headstarter-teenovator/}{National Entrepreneurship Competition by Teenovator}\newline Sofia, Buglaria}\\
+\info{Mar}{2018}{cvgreen}{white}{Bronze medal in \href{https://softuniada.softuni.bg/softuniada-2018/}{Softuniada Competition} in Algorithmic Programming\newline Sofia, Buglaria}
+\info{Jan}{2017}{cvgreen}{white}{Silver medals in U16 of \href{https://softuniada.softuni.bg/softuniada-2017/}{Softuniada Competition} in both Algorithmic Programming and Web and Software Projects\newline Sofia, Buglaria}
+\info{Nov}{2017}{cvgreen}{white}{Bronze medal in \href{https://infos.infosbg.com/contests/IATI/2017}{International Competition in Algorithmic Programming "John Atanasoff"}\newline Sofia, Buglaria}
+
+\vspace{1em}
+
+\bg{cvgreen}{white}{Languages} \\[0.25em]
+\begin{tabularx}{\linewidth}{p{3.25em} p{5em} l}
+    \languageitem{BG}{cvgreen}{white}{Native}{\pictofraction{\faCircle}{cvgreen}{5}{black!30}{0}{\scriptsize}}\\[0.5em]
+    \languageitem{EN}{cvgreen}{white}{C1 (SAT)}{\pictofraction{\faCircle}{cvgreen}{4}{black!30}{1}{\scriptsize}}
+\end{tabularx}
+
+\vspace{1em}
+
+\bg{cvgreen}{white}{Hobbies} \\[0.25em]
+\begin{flushright}
+Podcasts about A(u)DHD \\
+Brain Health~•~Gym\\
+Football~•~Table tennis\\
+Rock\&Metal Music
+\end{flushright}
+\vspace{1em}
+
+\bg{cvgreen}{white}{My mindset}\\
+\vspace{-1em}
+\epigraph{\small
+If it breaks under pressure, it was already broken.
+}{\it Alex Tsvetanov}
+
+\vspace{1em}
+
+\bg{cvgreen}{white}{Find me} \\[0.25em]
+\infobubble{\faFacebook}{cvgreen}{white}{\href{https://www.facebook.com/alex.tsvetanov.2002}{alex.tsvetanov.2002}}\\
+\infobubble{\faInstagram}{cvgreen}{white}{\href{https://www.instagram.com/tsvetanov__alex/}{tsvetanov\_\_alex}}\\
+
+\phantom{turn the page}
+\phantom{turn the page}
+}
+%-----------------------------------------------------------
+\switchcolumn
+
+\small
+\section*{Summary}
+
+\begin{flushleft}
+High-Performance Systems Engineer specializing in C++20 concurrency and cross-platform I/O systems for Windows, Linux, and macOS. Experienced in distributed system design, low-latency optimization, and production deployment. Recognized for debugging complex concurrency issues, collaborating across teams, and continuously improving performance and scalability.
+\end{flushleft}
+
+\section*{Experience}
+%\begin{tabularx}{\linewidth}{r@{\extracolsep{\fill}} | X p{1cm}}
+% Define the column widths manually since X doesn't work here.
+% We use 0.85\linewidth for the main text and 1cm for the logo.
+\tablehead{} % Leave empty if you don't want a repeating header
+\tabletail{}
+
+%\begin{supertabular}{p{0.125\linewidth} | p{0.825\linewidth}}
+\begin{tabularx}{\linewidth}{p{0.125\linewidth} | X p{1cm}}
+    \cvevent
+        {Present}
+        {July 2025}
+        {Senior C++ Engineer}
+        {Full-time}
+        {Hybrid}
+        {\href{https://www.acronis.com/en/}{Acronis}}
+        {Sofia, Bulgaria \color{cvred}}
+    {\begin{itemize}[nosep, leftmargin=*]
+        \item Led a team of 4 to design and ship the Disaster Recovery (DR) engine for Cyber Frame and VHI, enabling natively integrated, secure IaaS resilience across 25 global data centers.
+        \item Orchestrated licensing synchronization with Virtuozzo's Key Admin API, aligning complex feature requirements with backend capabilities to ensure predictable, ingress-free infrastructure pricing.
+        \item Engineered high-performance C++ modules for data serialization and integrity, integrating with Golang microservices optimized to handle multi-terabyte Kubernetes clusters per user, meeting core scalability targets for next-generation backup operations.
+    \end{itemize}}{images/companies/acronis.png}\\
+
+    \cvevent{July 2025}{July 2023}{C++ Engineer}{Full-time}{Hybrid}{\href{https://www.chaos.com/}{Chaos Group}}{Sofia, Bulgaria \color{cvred}}
+    {\begin{itemize}[nosep, leftmargin=*]
+        \item Achieved 5x viewport speedup by re-engineering point-cloud transformations using \href{https://github.com/xtensor-stack/xsimd}{xsimd} for cross-platform SIMD abstraction (SSE/AVX-512).
+        \item Architected and open-sourced the \href{https://github.com/ChaosGroup/sketchup-cpp-api}{"sketchup-cpp-api"} library to standardize plugin stability and eliminate cross-process memory corruption.
+        \item Refactored rendering subsystems for thread safety and cache locality, eliminating high-frequency crashes across varied hardware and scene scales.
+    \end{itemize}}{images/companies/chaos.png}\\
+
+    \cvevent{July 2023}{Sep 2022}{Software Architect}{Full-time}{Remote}{\href{https://www.scia.net/en}{SCIA}}{Leuven, Belgium \color{cvred}}
+    {\begin{itemize}[nosep, leftmargin=*]
+        \item Designed the migration of monolithic Visual C++ logic from legacy COM services to a modern gRPC and Redis-based architecture.
+        \item Modernized the global build system using CMake and vcpkg, unblocking cross-platform development for legacy structural engineering software.
+        \item Directed the evaluation and adoption of gRPC to replace aging internal protocols, ensuring long-term system scalability and interoperability.
+    \end{itemize}}{images/companies/scia.png}\\
+
+    \cvevent{Sep 2022}{July 2022}{C++ Back-end Developer}{Full-time}{Hybrid}{\href{https://careers.flutterinternational.com/our-brands/pokerstars/}{PokerStars}}{Sofia, Bulgaria \color{cvred}}
+    {\begin{itemize}[nosep, leftmargin=*]
+        \item Developed real-time limit-checking engines for a global platform peaking at 55,000+ concurrent players.
+        \item Implemented backend logic for localized regulatory compliance and addiction prevention across multiple international jurisdictions.
+        \item Engineered high-availability promotional systems with zero-tolerance for database inconsistency or latency in transaction-heavy environments.
+    \end{itemize}}{images/companies/pokerstars.png}\\
+
+    \cvevent{July 2022}{June 2021}{Full-stack Developer}{Full-time}{Hybrid}{\href{https://www.vmware.com/}{VMware}}{Sofia, Bulgaria \color{cvred}}
+    {\begin{itemize}[nosep, leftmargin=*]
+        \item Optimized Solution Builder SQL queries, reducing execution from 30s to 1.5s and resolving systemic deadlocks for thousands of users.
+        \item Delivered Spring Boot/Angular features for enterprise service bundling, managing complex role-pairing and automated quote generation.
+        \item Acted as the primary technical resource for front-end performance and styling, mentoring the team on UI best practices and modular Angular components.
+    \end{itemize}}{images/companies/vmware.png}\\
+    \cvevent{Sep 2019}{May 2019}{C++ Software Developer}{Part-time}{On-site}{\href{https://www.codix.eu/en}{Codix}}{Sofia, Bulgaria \color{cvred}}
+    {\begin{itemize}[nosep, leftmargin=*]
+        \item Developed core financial modules including lending, factoring, and debt collection for 9 international Tier-1 banking and financial institutions.
+        \item Maintained and extended high-stakes C++ "night jobs" and background processing services, ensuring data integrity for global financial close cycles.
+        \item Implemented 100+ feature extensions within a shared codebase, balancing client-specific requirements with a unified product architecture.
+    \end{itemize}}{images/companies/codix.png}\\
+    \iffalse
+        \cvevent{July 2025}{July 2023}{C++ Engineer}{Full-time}{Hybrid}{\href{https://www.chaos.com/}{Chaos Group}}{Sofia, Bulgaria \color{cvred}}
+        {\begin{itemize}[nosep, leftmargin=*]
+            \item Led the implementation of two major features for V-Ray for SketchUp, covering the full design, coding, and integration of a scalable architecture, improving the frame rate by 5x through SIMD-based computations, translating from 12 fps stutter to a smooth 60 fps.
+            \item Refactored legacy rendering subsystems for thread safety and cache locality and initiated the open-sourcing of the SketchUp-CPP-API library for type-safe plugin development (\href{https://github.com/ChaosGroup/sketchup-cpp-api}{GitHub link}).
+            \item Improved build stability and CI runtime by approximately 20\% through static-analysis integration.
+        \end{itemize}}{chaos.png}\\
+        \cvevent{July 2023}{Sep 2022}{Software Architect}{Full-time}{Remote}{\href{https://www.scia.net/en}{SCIA}}{Leuven, Belgium \color{cvred}}
+        {\begin{itemize}[nosep, leftmargin=*]
+            \item Part of the Software Architecture team
+            \item Integrated decades-old code with modern technologies to develop fully functional prototypes.
+            \item Contributed to the team's adoption of scrum practices for project management.
+        \end{itemize}}{scia.png}\\
+        \cvevent{Sep 2022}{July 2022}{C++ Back-end Developer}{Full-time}{Hybrid}{\href{https://careers.flutterinternational.com/our-brands/pokerstars/}{PokerStars}}{Sofia, Bulgaria \color{cvred}}
+        {\begin{itemize}[nosep, leftmargin=*]
+            \item Implementing requests from subsidiaries and customers to enhance platform functionality.
+            \item Ensuring promotions target eligible players and prevent gambling addiction.
+            \item Collaborating with marketing team to execute responsible gambling initiatives effectively.
+        \end{itemize}}{pokerstars.png}\\
+        \cvevent{July 2022}{June 2021}{Full-stack Web Developer (Java \& Angular)}{Full-time}{Hybrid}{\href{https://www.vmware.com/}{VMware}}{Sofia, Bulgaria \color{cvred}}
+        {\begin{itemize}[nosep, leftmargin=*]
+            \item Delivered two complete product features and several client customizations on the Solution Builder platform.
+            \item Utilized Java backend microservices and Angular front-end components to support thousands of users.
+            \item Revamped SQL queries in order to optimize the content delivery for the thousands of end users
+        \end{itemize}}{vmware.png}\\
+        \cvevent{Sep 2019}{May 2019}{C++ Software Developer}{Part-time}{On-site}{\href{https://www.codix.eu/en}{Codix}}{Sofia, Bulgaria \color{cvred}}
+        {\begin{itemize}[nosep, leftmargin=*]
+            \item Developing and maintaining back-end services for 9 international banks, utilizing C/C++ and SQL.
+            \item Implementing over 100 customer requests for modifications and extensions of the software.
+            \item Collaborating with international banking clients to ensure their software needs are met and their systems are optimized for performance and security
+        \end{itemize}}{codix.png}\\
+    \fi
+%\end{supertabular}
+\end{tabularx}
+
+\section*{Education}
+%\begin{supertabular}{p{0.125\linewidth} | p{0.7\linewidth} p{1cm}}
+\begin{tabularx}{\linewidth}{p{0.125\linewidth} | X p{1cm}}
+    \cvdegree
+        {June 2026}
+        {Sep 2023}
+        {Computer and Software Engineering}
+        {B.Eng., State-funded}
+        {\href{https://tu-sofia.bg/faculties/read/27}{Technical University of Sofia, Bulgaria} 
+            {\color{headerblue}\phantom{i}\footnotesize ~\faUniversity}
+        }
+        {Thesis: "Design and Development of a C++ Web Application Framework"\newline Full-time, Grade: Excellent, 240 ECTS}
+        {images/education/Tu-sofia-logo.png} \\
+        
+    \cvdegree
+        {June 2023}
+        {Sep 2022}
+        {Engineering Technology}
+        {B.Eng.}
+        {\href{https://www.kuleuven.be/programmes/bachelor-engineering-technology}{Katholieke Universiteit Leuven, Belgium} 
+            {\color{headerblue}\phantom{i}\footnotesize ~\faUniversity}
+        }
+        {Full-time, Terminated program in English}
+        {images/education/KU-logo.png} \\
+    
+    \cvdegree
+        {June 2022}
+        {Sep 2021}
+        {Industrial Engineering in English}
+        {B.Eng., State-funded}
+        {\href{https://www.tu-sofia.bg/specialties/preview/666}{Technical University of Sofia, Bulgaria} 
+            {\color{headerblue}\phantom{i}\footnotesize ~\faUniversity}
+        }
+        {Full-time, Transferred abroad}
+        {images/education/Tu-sofia-logo.png} \\
+    
+    \cvdegree
+        {June 2021}
+        {Sep 2013}
+        {Mathematics \& Informatics}
+        {High School}
+        {\href{https://smg.bg/}{Sofia High School of Mathematics, Bulgaria}}
+        {Full-time, Grade: Excellent}
+        {images/education/SMG-logo.png} \\
+%\end{supertabular}
+\end{tabularx}
+
+\section*{Trainings}
+\begin{tabularx}{\linewidth}{p{0.125\linewidth} | X p{1cm}}
+%\begin{supertabular}{p{0.125\linewidth} | p{0.7\linewidth} p{1cm}}
+    \cvcourse
+        {Sep 2018}
+        {Aug 2018}
+        {SAP Geeky Camp 5.0}
+        {on-site, Sofia, Bulgaria}
+        {Summer School}
+        {\href{https://www.sap.com/bulgaria/about.html}{SAP Bulgaria}}
+        {Selective summer tech camp with intensive focus on algorithms, data structures, and solving real-world software engineering problems in teams.}
+        {images/trainings/SAP.png} \\
+    
+    \cvcourse
+        {June 2018}
+        {Sep 2017}
+        {Java Web Development}
+        {on-site, Sofia, Bulgaria}
+        {Telerik School Academy}
+        {\href{https://www.telerikacademy.com/}{Telerik Academy}}
+        {Built full-stack web apps using Java and the Spring Framework. Focused on MVC architecture, dependency injection, and database connectivity.}
+        {images/trainings/telerik.jpg} \\
+        
+    \cvcourse
+        {Sep 2019}
+        {June 2016}
+        {Summer Research School}
+        {on-site, Blagoevgrad, Bulgaria}
+        {Summer School}
+        {\href{https://www.math.bas.bg/omi/hssimi/?page\_id=425}{Bulgarian Academy of Sciences}}
+        {Research-focused program led by top scientists in Europe. Participated in cybersecurity, AI, and systems modeling projects under academic mentorship.}
+        {images/trainings/bas-logo.png} \\
+    
+    \cvcourse
+        {June 2017}
+        {Sep 2016}
+        {C\#.NET}
+        {on-site, Sofia, Bulgaria}
+        {Telerik Software Academy}
+        {\href{https://www.telerikacademy.com/}{Telerik Academy By Progress}}
+        {Focused on web development with ASP.NET. Covered server-side logic, MVC patterns, and RESTful services with C\#.}
+        {images/trainings/telerik-progress.png} \\
+    
+    \cvcourse
+        {June 2017}
+        {Sep 2016}
+        {Web Development}
+        {on-site, Sofia, Bulgaria}
+        {Telerik Software Academy}
+        {\href{https://www.telerikacademy.com/}{Telerik Academy By Progress}}
+        {Developed full-stack web applications using Node.js, HTML, CSS, and vanilla JavaScript. Emphasized frontend-backend interaction and client-server architecture.}
+        {images/trainings/telerik-progress.png} \\
+    
+    \cvcourse
+        {June 2017}
+        {Oct 2014}
+        {Algorithms \& Data Structures}
+        {on-site, Sofia, Bulgaria}
+        {Telerik Algo Academy}
+        {\href{https://www.telerikacademy.com/}{Telerik Academy}}
+        {Advanced training in algorithmic techniques, including recursion, dynamic programming, graphs, and greedy algorithms. Participated in national coding competitions.}
+        {images/trainings/telerik.jpg} \\
+        
+    \cvcourse
+        {June 2018}
+        {Sep 2014}
+        {C++ \& Algorithms}
+        {on-site, Sofia, Bulgaria}
+        {Telerik Kids Academy}
+        {\href{https://www.telerikacademy.com/}{Telerik Academy}}
+        {Hands-on programming fundamentals and problem-solving using C++. Built strong foundations in syntax, logic, and algorithmic thinking from an early age.}
+        {images/trainings/telerik.jpg} \\
+%\end{supertabular}
+\end{tabularx}
+
+\section*{Publications}
+\begin{tabularx}{\linewidth}{p{0.125\linewidth} | X}
+ %\begin{tabularx}{\linewidth}{p{0.125\linewidth} | X}
+     \makecell[tr]{Nov 2025} & \textbf{Optimizing Asynchronous Event Dispatch in Modern C++ Publish/Subscribe Systems}\\
+    & TELECOM 2025, Sofia, Bulgaria~•~\href{https://doi.org/10.1109/TELECOM66943.2025.11304088}{10.1109/TELECOM66943.2025.11304088} \\
+    & Alex Tsvetanov \\[0.5em]
+    \makecell[tr]{June 2025} & \textbf{Modern C++ Publish/Subscribe Pattern: Design, Challenges, and Implementation}\\
+    & ICEST 2025, Ohrid, North Macedonia~•~\href{https://doi.org/10.1109/icest66328.2025.11098436}{10.1109/icest66328.2025.11098436} \\
+    & Alex Tsvetanov ~•~Assoc.\ Prof.\ Ivan Stankov, Ph.D. \\[0.5em]
+    \makecell[tr]{Nov 2024} & \textbf{Matching Text from Start to Finish Against Multiple Regular Expressions}\\
+    & TELECOM 2024, Sofia, Bulgaria~•~\href{https://doi.org/10.1109/telecom63374.2024.10812214}{10.1109/telecom63374.2024.10812214} \\
+    & Alex Tsvetanov ~•~Assoc.\ Prof.\ Ivan Stankov, Ph.D. \\[0.5em]
+    \makecell[tr]{Nov 2017} & \textbf{An Analytical Outlook towards Digital Training Security Transformations}\\
+    & ICAICTSEE-2017, Sofia, Bulgaria~•~\href{https://doi.org/10.13140/RG.2.2.20333.28645}{10.13140/RG.2.2.20333.28645} \\
+     & Assoc.\ Prof.\ Zlatogor Minchev~•~Luben Boyanov, PhD~•~Alex Tsvetanov~•~\newline Antoan Georgiev\\
+ \end{tabularx}
+ \newpage
+\section*{Projects}
+\projectitem[part of a patent application]{https://github.com/Alex-Tsvetanov/WebFrame}{Coroute (f.k.a. WebFrame++)}{Cross-Platform Web Framework}{
+    \item Designed and benchmarked a high-performance asynchronous server architecture handling 750\,000 to 1\,2 million requests per second across Windows and Linux (measured with wrk and ab).
+    \item Implemented a coroutine-based I/O scheduler and lock-free queues, improving throughput by about 13\%.
+    \item Developed a modular networking layer that abstracts IOCP, io\_uring, and kqueue into a unified asynchronous API.
+    \item Evaluated coroutine scheduling models and caching strategies to minimize latency jitter.
+    \item Expanded functionality to support coroutine-based HTTP pipelining and asynchronous file streaming.
+}
+\projectitem[][images/projects/headstarter_logo2.png]{https://github.com/Headstarter/}{Headstarter}{High-school Entrepreneurship Project}{
+    \item Developing and maintaining the Headstarter web platform for connecting young students with businesses offering internships and jobs.
+    \item Supporting the platform goals of guiding students in career paths, networking, and
+    gaining experience.
+    \item Organizing the team's workload for efficient operations and service delivery.
+}
+\projectitem[][images/projects/techedu.png]{https://github.com/TechEducationPlusPlus}{TechEdu++}{Learning Management System for Informatics}{
+    \item Developing a learning management system (LMS) with Informatics courses for high school students.
+    \item Creating short, engaging video lessons in multiple programming languages.
+    \item Integrating TechEdu++ into the teaching processes at Sofia High School of Mathematics.
+}
+
+\section*{Volunteering}
+\begin{tabularx}{\linewidth}{p{0.125\linewidth} | X p{1cm}}
+    \volunterringitem[images/volunteering/openfest.png]
+        {\href{https://youtu.be/iMLiv5GwQsk?t=30097}{Lighting talk speaker at OpenFest}}
+        {Nov 2025}
+        {on-site, Sofia, Bulgaria}
+        {Delivered a 5-minute lightning talk on leveraging C++20 coroutines (\texttt{co\_await}) over unified kernel I/O queues, covering the submit/completion queue model, a coroutine-friendly async I/O API, and a thread-pool executor design — demonstrating how modern C++ enables high-throughput, low-latency I/O with synchronous-style code.}
+    %\volunterringitem[openfest.png]{\href{https://youtu.be/EjGf3FXAsNA?t=23415}{Lighting talk speaker at OpenFest}}{Nov 2024}{on-site, Sofia, Bulgaria}{Delivered two 5-minute lightning talks. The first one was about the optimizations implemented in WebFrame++ to minimize the thread overhead during low to medium load onto the web server and the second one was about the development and benefits of Chaos Group's in-house project, which got open-sourced - \href{https://github.com/ChaosGroup/sketchup-cpp-api}{SketchUp-CPP-API}.}
+    \volunterringitem[images/education/SMG-logo.png]
+        {Author \& Co-organizer of Open Doors Day at \href{https://smg.bg/}{Sofia High School of Mathematics}}
+        {Apr 2018\\Apr 2019\\Apr 2020}
+        {on-site, Sofia, Bulgaria}
+        {Organized 3 annual editions of the Open Doors Day event, where 19 alumni shared their career journeys post-graduation. Coordinated all logistics and communication with guest speakers, created the event schedule, and set up the server infrastructure for live streaming and online attendance.}
+    \volunterringitem[images/volunteering/softuni.png]
+        {Technical Trainer at \href{https://softuni.bg/}{Software University (SoftUni)}}
+        {May 2017\\June 2017}
+        {on-site, Sofia, Bulgaria}
+        {Delivered Python programming lectures to a diverse group of learners, including working professionals retraining for software roles. Covered foundational topics such as syntax, control flow, functions, data structures, and OOP principles. Led live coding sessions, assigned practical exercises and homework, and evaluated performance through final exams. Adapted teaching style to accommodate varying experience levels and professional backgrounds.}
+    \volunterringitem[images/volunteering/coderdojo.png]
+        {Student Mentor at \href{https://www.facebook.com/photo/?fbid=230142964002973&set=\%D0\%B5\%D0\%BB\%D0\%B0\%D1\%82\%D0\%B5-\%D0\%B4\%D0\%B0-\%D1\%81\%D0\%B5-\%D0\%B7\%D0\%B0\%D0\%BF\%D0\%BE\%D0\%B7\%D0\%BD\%D0\%B0\%D0\%B5\%D0\%BC-\%D0\%BD\%D0\%B0-\%D0\%BA\%D0\%BE\%D0\%BD\%D1\%84\%D0\%B5\%D1\%80\%D0\%B5\%D0\%BD\%D1\%86\%D0\%B8\%D1\%8F-\%D0\%B8\%D0\%BD\%D0\%BE\%D0\%B2\%D0\%B0\%D1\%86\%D0\%B8\%D0\%B8-\%D0\%B7\%D0\%B0-\%D0\%BF\%D0\%BE-\%D0\%B4\%D0\%BE\%D0\%B1\%D1\%80\%D0\%BE-\%D0\%BE\%D0\%B1\%D1\%80\%D0\%B0\%D0\%B7\%D0\%BE\%D0\%B2\%D0\%B0\%D0\%BD\%D0\%B8\%D0\%B5-\%D0\%B2-sofia-ev}{Coder Dojo Bulgaria (organized by Telerik Academy)}}
+        {Sep 2017\\June 2018}
+        {on-site, Sofia, Bulgaria}
+        {Volunteered as a mentor guiding young learners (“Ninjas”) through basic programming concepts. Assisted them in building small personal projects, encouraged curiosity, and provided support during hands-on coding sessions.}
+    \volunterringitem[images/volunteering/testrain.png]
+        {Project "Testrain" part of the \href{https://www.researchgate.net/publication/329013929_KOMPUTRNA_SIMULACIA_VIRTUALNA_PROVERKA_NA_TEORIATA_ZA_AFEKTITE_I_SCENARIITE_SZDADENA_OT_SILVAN_TOMKINS_A_COMPUTER_SIMULATION_VIRTUAL_TEST_OF_SILVAN_TOMKINS'_AFFECT_AND_SCRIPT_THEORY}{"A Computer Simulation Virtual Test of Silvan Tomkins' Affect and Script Theory" conference paper}}
+        {Sep 2016\\June 2017}
+        {on-site, Sofia, Bulgaria}
+        {Developed the web interface for an experimental platform simulating emotional response theory based on Silvan Tomkins' work. Contributed to the visualization and interaction layer of the research tool used in academic experiments.}
+\end{tabularx}
+%\vspace{0.375cm}
+
+%\begin{minipage}[t]{0.4\textwidth}
+%    \section*{Certificates \& Grants}
+%    \begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.75\textwidth}}
+%    2025 & 1st place among the university teams in \href{https://www.linkedin.com/posts/\%D0\%B3\%D0\%BE\%D0\%BB\%D1\%8F\%D0\%BC\%D0\%BE\%D1\%82\%D0\%BE-schwarz-\%D0\%BC\%D0\%B5\%D0\%B6\%D0\%B4\%D1\%83\%D1\%87\%D0\%B0\%D1\%81\%D0\%B8\%D0\%B5_theultimatecyberchallenge-hackathon-cybersecurity-activity-7384961855401791488-4wZI}{the cybersecurity hackathon "Big SCHWARZ Interlude"} \\
+%    2019 & Runner-up in President's awards "John Atanasov"  \\
+%    2019 & 1st place, National Entrepreneurship Competition with Headstarter \\
+%    2019 & Top 10 European Student Startup Competition with Headstarter \\
+%    2017 & Bronze medal in International Competition in Algorithmic Programming "John Atanasov"
+
+%    \end{tabular}
+%\end{minipage}
+%\hfill
+%\begin{minipage}[t]{0.3\textwidth}
+%    \section*{Languages}
+%    \begin{tabular}{l | ll}
+%        \textbf{Bulgarian} & Native & {\pictofraction{\faCircle}{cvgreen}{5}{black!30}{0}{\tiny}} \\
+%        \textbf{English} & C1 & \pictofraction{\faCircle}{cvgreen}{4}{black!30}{1}{\tiny}
+%    \end{tabular}
+%    \\[0.5em]
+%    \section*{Hobbies}
+%    Podcasts about Neurodivergency \& Brain health ~•~
+%    Gym ~•~Football~•~Table tennis
+%\end{minipage}
+
+%\vfill
+%\vspace{5cm}
+
+%----------------------------------------------------------------------------------------
+%	FINAL FOOTER
+%----------------------------------------------------------------------------------------
+%\setlength{\parindent}{0pt}
+%\begin{minipage}[t]{\rightcolwidth}
+%\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
+%{\footnotesize Alex Tsvetanov \icon{\faEnvelopeO}{cvgreen}{} \href{mailto:alex\_tsvetanov\_2002@abv.bg}{alex\_tsvetanov\_2002@abv.bg} \icon{\faMapMarker}{cvgreen}{} Sofia, Bulgaria \icon{\faPhone}{cvgreen}{} \href{tel:+359988329931}{+359 988 329 931}% \newline\icon{\faAt}{cvgreen}{} \protect\url{jack@sparrow.com}
+%}
+%\end{center}
+%\end{minipage}
+
+\end{paracol}
+
+\end{document}
