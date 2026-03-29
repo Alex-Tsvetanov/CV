@@ -238,3 +238,11 @@
 
 % Certificate/award entry with fixed cvgreen/white colours: \cvinfo{month}{year}{text}
 \newcommand{\cvinfo}[3]{\info{#1}{#2}{cvgreen}{white}{#3}}
+
+% Publication entry row(s) inside a two-column tabularx{p{0.125\linewidth}|X}
+% \cvpublication{date}{title}{venue~•~\href{doi-url}{doi}}{authors}
+\newcommand{\cvpublication}[4]{%
+  \makecell[tr]{#1} & \textbf{#2}\\
+  & #3 \\
+  & #4 \\[0.5em]%
+}
