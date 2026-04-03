@@ -210,7 +210,6 @@
 \renewcommand{\iconsize}{\Large}
 }
 
-% ---------------------------------------------------------------------------
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
