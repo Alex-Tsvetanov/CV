@@ -246,3 +246,18 @@
   & #3 \\
   & #4 \\[0.5em]%
 }
+
+% ---------------------------------------------------------------------------
+% \cvreference{quote}{name}{title}{company}{date}{url}
+\newcommand{\cvreference}[6]{%
+  %\epigraph{\small\it #1}{\href{#6}{#2}\\ #3\\#4\\#5}%
+  \begin{flushleft}\small\it #1\end{flushleft}
+  \vspace{-0.75em}
+  {\href{#6}{#2}\\ #3\\#4\\#5}%
+}
+\newcommand{\cvhline}[0]{%
+  %\vspace{0.25em}
+  \textcolor{cvgreen}{\rule{\linewidth}{0.4pt}}
+  %\vspace{0.25em}%
+}
+% ---------------------------------------------------------------------------
