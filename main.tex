@@ -4,12 +4,12 @@
 % available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
 % withoutsidebar
 \usepackage[utf8]{inputenc}
-\usepackage[default]{raleway}
+\usepackage[default,lining]{raleway}
 \usepackage[margin=1cm, a4paper]{geometry}
 
 \title{Alex Tsvetanov - Curriculum Vitae}
 \author{Alex Tsvetanov}
-\date{July 2025}
+\date{\today}
 
 \pagestyle{empty}
 
@@ -76,8 +76,8 @@
 
 \flushleft
 \sideinfo{\faBirthdayCake}{12 Aug 2002} \\
-\sideinfo{\faMapMarker}{Bulgaria, Sofia 1750, Mladost 1 R.D.} \\
-\sideinfo{\faPhone}{\href{tel:+359988329931}{+359 988 329 931}} \\
+\sideinfo{\faMapMarker}{Bulgaria, Sofia 1750,\\Mladost 1 R.D.} \\
+\sideinfo{\faPhone}{\OldHref{tel:+359988329931}{+359 988 329 931}} \\
 \sideinfo{\faAt}{\href{mailto:alex\_tsvetanov\_2002@abv.bg}{alex\_tsvetanov\_2002\\@abv.bg}}\\
 \sideinfo{\faGithub}{\href{https://github.com/alex-tsvetanov}{Alex-Tsvetanov}}\\
 \sideinfo{\faLinkedin}{\href{https://www.linkedin.com/in/alex-tsvetanov/}{Alex-Tsvetanov}}\\
@@ -95,45 +95,50 @@
     \barrule{0.40}{0.5em}{cvgreen} & \textbf{Java}\\[0.5em]
     \barrule{0.40}{0.5em}{cvgreen} & \textbf{C\#.NET}\\[0.5em]
     \barrule{0.35}{0.5em}{cvgreen} & \textbf{TypeScript}\\[0.5em]
-    \barrule{0.30}{0.5em}{cvgreen} & \textbf{Golang}
+    \barrule{0.35}{0.5em}{cvgreen} & \textbf{Golang}
 \end{tabular*}
 
 \vspace{0.5em}
 
 \flushright
-\sideheading{Systems \& APIs} \\[0.25em]
-IOCP~•~io\_uring~•~kqueue\\[0.25em]
-multithreading \\[0.25em]
-protocols (HTTP \& gRPC) \\[0.25em]
-synchronization ~•~SIMD \\[0.25em]
+\sideheading{Systems \& APIs} \\%[0.25em]
+IOCP~•~io\_uring~•~kqueue\\%[0.25em]
+multithreading \\%[0.25em]
+protocols (HTTP \& gRPC) \\%[0.25em]
+synchronization ~•~SIMD \\%[0.25em]
 
 \vspace{1em}
-\sideheading{Tools \& Environments} \\[0.25em]
-Linux~•~Windows~•~macOS \\[0.25em]
-Kubernetes~•~Docker \\[0.25em]
-CMake~•~Git~•~SonarQube \\[0.25em]
-strace~•~wrk~•~ab~•~CI/CD \\[0.25em]
+\sideheading{Tools \& Environments} \\%[0.25em]
+Linux~•~Windows~•~macOS \\%[0.25em]
+Kubernetes~•~Docker \\%[0.25em]
+CMake~•~Git~•~SonarQube \\%[0.25em]
+strace~•~wrk~•~ab~•~CI/CD \\%[0.25em]
 
 \vspace{1em}
 
-\sideheading{Domains} \\[0.25em]
-Algorithms \& Data Structures\\[0.25em]
-Concurrency Design \\[0.25em]
-Distributed Systems \\[0.25em]
-System Architecture \\[0.25em]
-Low-latency Optimization \\[0.25em]
+\sideheading{Domains} \\%[0.25em]
+Algorithms \& Data Structures\\%[0.25em]
+Concurrency Design \\%[0.25em]
+Distributed Systems \\%[0.25em]
+System Architecture \\%[0.25em]
+Low-latency Optimization \\%[0.25em]
 Native Language Bindings
 
 \vspace{1em}
 
-\sideheading{Soft skills} \\[0.25em]
+\sideheading{Soft skills} \\%[0.25em]
 Strategic Planning\\
 Leadership\\
 Active Listening\\
 Public Speaking\\
 Learning Agility\\
 Resilience\\
-Initiative\\[0.25em]
+Problem-solving\\
+Critical Thinking\\
+Teamwork\\
+Continuous Learning\\
+Accountability\\
+Initiative\\
 
 %Communication~•~Teamwork \\[0.25em]
 %Leadership~•~Public Speaking \\[0.25em]
@@ -155,21 +160,41 @@ Initiative\\[0.25em]
 %Professionalism~•~Discipline \\[0.25em]
 %Data Interpretation \\[0.25em]
 %Risk Assessment \\[0.25em]
-
-\vspace{1em}
 \newpage
 \sideheading{References} \\
-\vspace{-0.25cm}
+\vspace{-0.15cm}
 \setlength{\epigraphwidth}{\linewidth}
-\cvreference{
-While in high school, Alex's interests focused on AI and Society 5.0. His innovative thinking led us to include him in a specialized young researchers' team for our studies on "Society 5.0 towards 2030". His AI results were further extended for a virtual teacher, providing a visionary outlook for the future of smart education. Alex is a fast-progressing and highly innovative researcher.}{Assoc. Prof. Zlatogor Minchev
-}{JTSAC Director}{IICT-BAS}{March 2026}{https://www.linkedin.com/in/zlatogor-minchev-632134a}
+\cvreference
+    {While in high school, Alex's interests focused on AI and Society 5.0. His innovative thinking led us to include him in a specialized young researchers' team for our studies on "Society 5.0 towards 2030". His AI results were further extended for a virtual teacher, providing a visionary outlook for the future of smart education. Alex is a fast-progressing and highly innovative researcher.}
+    {Assoc. Prof.}{Zlatogor Minchev}
+    {JTSAC Director}
+    {IICT-BAS}
+    {March 2026}
+    {https://www.linkedin.com/in/zlatogor-minchev-632134a}
 \cvhline
-\cvreference{Alex consistently demonstrates outstanding technical skills and a fearless approach to complex challenges. During our time together, he was instrumental in implementing key features and driving significant infrastructure improvements, directly contributing to the success and stability of our projects.}{Noel Warren}{Senior Software Developer}{Chaos}{June 2025}{https://www.linkedin.com/in/noel-warren-350994216}
+\cvreference
+    {Alex consistently demonstrates outstanding technical skills and a fearless approach to complex challenges. During our time together, he was instrumental in implementing key features and driving significant infrastructure improvements, directly contributing to the success and stability of our projects.}
+    {}{Noel Warren}
+    {Senior Software Developer}
+    {Chaos}
+    {June 2025}
+    {https://www.linkedin.com/in/noel-warren-350994216}
 \cvhline
-\cvreference{As part of the Architecture team, whose main responsibility was to prototype and introduce innovations, Alex Tsvetanov excelled as a fast learner. No matter which technology we picked (gRPC, Redis, vcpkg), he was always able to quickly learn it and directly build a fully functional prototype. And that was never easy, as he often needed to combine code that was tens of years old with recent technology that was not even suitable for our target platform.}{Jan Stříteský}{Lead Software Architect}{SCIA}{April 2023}{https://www.linkedin.com/in/jan-st\%C5\%99\%C3\%ADtesk\%C3\%BD-429b5769}
+\cvreference
+    {As part of the Architecture team, whose main responsibility was to prototype and introduce innovations, Alex Tsvetanov excelled as a fast learner. No matter which technology we picked (gRPC, Redis, vcpkg), he was always able to quickly learn it and directly build a fully functional prototype. And that was never easy, as he often needed to combine code that was tens of years old with recent technology that was not even suitable for our target platform.}
+    {}{Jan Stříteský}
+    {Lead Software Architect}
+    {SCIA}
+    {April 2023}
+    {https://www.linkedin.com/in/jan-st\%C5\%99\%C3\%ADtesk\%C3\%BD-429b5769}
 \cvhline
-\cvreference{Alex is not only an excellent programmer, but a sociable and motivated colleague with whom it is pleasant to communicate. He is extremely organized and can be relied upon to learn quickly and clearly, as well as to perform complex tasks independently. I am impressed with his attitude towards the work and the quality results he has achieved.}{Irina Drencheva}{Software Dev Manager}{Codix}{October 2019}{https://www.linkedin.com/in/irina-drencheva-36406745}
+\cvreference
+    {Alex is not only an excellent programmer, but a sociable and motivated colleague with whom it is pleasant to communicate. He is extremely organized and can be relied upon to learn quickly and clearly, as well as to perform complex tasks independently. I am impressed with his attitude towards the work and the quality results he has achieved.}
+    {}{Irina Drencheva}
+    {Software Dev Manager}
+    {Codix}
+    {October 2019}
+    {https://www.linkedin.com/in/irina-drencheva-36406745}
 
 \newpage
 \sideheading{Certificates \& Grants} \\%[0.25em]
@@ -252,7 +277,7 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
 
     \cvevent{July 2023}{Sep 2022}{Software Architect}{Full-time}{Remote}{\href{https://www.scia.net/en}{SCIA}}{Leuven, Belgium \color{cvred}}
     {\begin{itemize}[nosep, leftmargin=*]
-        \item Designed the migration of monolithic Visual C++ logic from legacy COM services to a modern gRPC and Redis-based architecture.
+        \item Designed the migration of monolithic Visual C++ logic from legacy COM services to a modern \href{https://grpc.io/docs/languages/cpp/quickstart/}{gRPC} and \href{https://redis.io/}{Redis}-based architecture.
         \item Modernized the global build system using CMake and vcpkg, unblocking cross-platform development for legacy structural engineering software.
         \item Directed the evaluation and adoption of gRPC to replace aging internal protocols, ensuring long-term system scalability and interoperability.
     \end{itemize}}{images/companies/scia.png}\\
@@ -286,20 +311,20 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {Computer and Software Engineering}
         {B.Eng., State-funded}
         {\href{https://tu-sofia.bg/faculties/read/27}{Technical University of Sofia, Bulgaria} 
-            {\color{headerblue}\phantom{i}\footnotesize ~\faUniversity}
+            {\color{headerblue}\footnotesize ~\faUniversity}
         }
-        {Thesis: "Design and Development of a C++ Web Application Framework"\newline Full-time, Grade: Excellent, 240 ECTS}
+        {Thesis: "Design and Development of a Compile-time ORM library in C++"\newline Full-time, Grade: Excellent, 240 ECTS.}
         {images/education/Tu-sofia-logo.png} \\
         
     \cvdegree
         {June 2023}
         {Sep 2022}
         {Engineering Technology}
-        {B.Eng.}
+        {B.Eng., Self-funded}
         {\href{https://www.kuleuven.be/programmes/bachelor-engineering-technology}{Katholieke Universiteit Leuven, Belgium} 
-            {\color{headerblue}\phantom{i}\footnotesize ~\faUniversity}
+            {\color{headerblue}\footnotesize~\faUniversity}
         }
-        {Full-time, Terminated program in English}
+        {Full-time, Terminated program in English.}
         {images/education/KU-logo.png} \\
     
     \cvdegree
@@ -308,18 +333,18 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {Industrial Engineering in English}
         {B.Eng., State-funded}
         {\href{https://www.tu-sofia.bg/specialties/preview/666}{Technical University of Sofia, Bulgaria} 
-            {\color{headerblue}\phantom{i}\footnotesize ~\faUniversity}
+            {\color{headerblue}\footnotesize ~\faUniversity}
         }
-        {Full-time, Transferred abroad}
+        {Full-time, Transferred abroad.}
         {images/education/Tu-sofia-logo.png} \\
     
     \cvdegree
         {June 2021}
         {Sep 2013}
         {Mathematics \& Informatics}
-        {High School}
+        {High School, State-funded}
         {\href{https://smg.bg/}{Sofia High School of Mathematics, Bulgaria}}
-        {Full-time, Grade: Excellent}
+        {Full-time, Grade: Excellent.}
         {images/education/SMG-logo.png} \\
 \end{tabularx}
 
@@ -417,20 +442,20 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
 \end{tabularx}
  \newpage
 \section*{Projects}
-\projectitem[part of a patent application][images/projects/omnix.png]{https://github.com/Alex-Tsvetanov/WebFrame}{Coroute (f.k.a. WebFrame++)}{Web Framework | 2017-}{
+\projectitem[part of a\\patent application][images/projects/omnix.png]{https://github.com/Alex-Tsvetanov/WebFrame}{Coroute/WebFrame++}{Web Framework}{Personal}{2017-}{
     \item Designed and benchmarked a high-performance asynchronous server architecture handling 750'000 to 1.2 million requests per second across Windows and Linux (measured with wrk and ab).
     \item Implemented a coroutine-based I/O scheduler and lock-free queues, improving throughput by about 13\%.
     \item Developed a modular networking layer that abstracts IOCP, io\_uring, and kqueue into a unified asynchronous API.
     \item Evaluated coroutine scheduling models and caching strategies to minimize latency jitter.
     \item Expanded functionality to support coroutine-based HTTP pipelining and asynchronous file streaming.
 }
-\projectitem[][images/projects/headstarter_logo2.png]{https://github.com/Headstarter/}{Headstarter}{High-school Entrepreneurship Project | 2018-2022}{
+\projectitem[][images/projects/headstarter_logo2.png]{https://github.com/Headstarter/}{Headstarter}{High-school Entrepreneurship Project}{Team}{2018-2022}{
     \item Developing and maintaining the Headstarter web platform for connecting young students with businesses offering internships and jobs.
     \item Supporting the platform goals of guiding students in career paths, networking, and
     gaining experience.
     \item Organizing the team's workload for efficient operations and service delivery.
 }
-\projectitem[][images/projects/techedu.png]{https://github.com/TechEducationPlusPlus}{TechEdu++}{Learning Management System for Informatics | 2016-2019}{
+\projectitem[][images/projects/techedu.png]{https://github.com/TechEducationPlusPlus}{TechEdu++}{Learning Management System for Informatics}{Team}{2016-2019}{
     \item Developing a learning management system (LMS) with Informatics courses for high school students.
     \item Creating short, engaging video lessons in multiple programming languages.
     \item Integrating TechEdu++ into the teaching processes at Sofia High School of Mathematics.
