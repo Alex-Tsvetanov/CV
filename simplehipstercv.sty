@@ -126,7 +126,7 @@
         \noindent\makebox[\linewidth]{%
             \textbf{\href{#3}{#4} | #5}%
             \hfill
-            \ifstrempty{#1}{}{\textit{#1}}%
+            \ifstrempty{#1}{}{\textit{\scriptsize{#1}}}%
         }%
         \begin{itemize}\color{black!70}#6\end{itemize}%
     }{%
@@ -135,7 +135,7 @@
                 \noindent\makebox[\hsize]{%
                     \textbf{\href{#3}{#4} | #5}%
                     \hfill
-                    \ifstrempty{#1}{}{\textit{#1}}%
+                    \ifstrempty{#1}{}{\textit{\scriptsize{#1}}}%
                 }%
                 \begin{itemize}\color{black!70}#6\end{itemize}%
             \end{minipage}%
@@ -147,7 +147,7 @@
 
 \newcommand{\volunterringitem}[5][]{%
     {\makecell[tr]{#3}\hspace{0.2cm}} &
-    {\let\href\OldHref\textbf{#2}} {\scriptsize(#4)}\newline
+    {\def\href##1##2{\OldHref{##1}{\uline{##2}}}\textbf{#2}} {\scriptsize(#4)}\newline
     {\color{black!70} #5}\vspace{0.1em} &
     \raisebox{-0.7\height}{\includegraphics[width=1cm]{#1}}\\
 }
@@ -157,12 +157,12 @@
 
 \newcommand{\simpleheader}[5]{
 \tikz[remember picture,overlay] {%
-\node[rectangle, fill=#1, anchor=north, minimum width=\paperwidth, minimum height=2.2cm](header) at (current page.north){};%
+\node[rectangle, fill=#1, anchor=north, minimum width=\paperwidth, minimum height=2.7cm](header) at (current page.north){};%
 \node[draw=none, align=left](name) at (header) {%
 {\Huge \color{#5} \textbf{#2 #3} }%
 };%
-\node[draw=none, below](description) at (name.south) {\color{white}#4};% 
-}\vspace{-2.15cm}%
+\node[draw=none, below=0.5em](description) at (name.south) {\color{white}#4};% 
+}\vspace{-1.65cm}%
 }
 
 
@@ -239,12 +239,12 @@
 % Certificate/award entry with fixed cvgreen/white colours: \cvinfo{month}{year}{text}
 \newcommand{\cvinfo}[3]{\info{#1}{#2}{cvgreen}{white}{#3}}
 
-% Publication entry row(s) inside a two-column tabularx{p{0.125\linewidth}|X}
-% \cvpublication{date}{title}{venue~•~\href{doi-url}{doi}}{authors}
-\newcommand{\cvpublication}[4]{%
-  \makecell[tr]{#1} & \textbf{#2}\\
-  & #3 \\
-  & #4 \\[0.5em]%
+% Publication entry row(s) inside a three-column tabularx{p{0.125\linewidth}|X p{1cm}}
+% \cvpublication[logo]{date}{title}{venue~•~\href{doi-url}{doi}}{authors}
+\NewDocumentCommand{\cvpublication}{O{} m m m m}{%
+  \makecell[tr]{#2} & \textbf{#3} &
+  \ifstrempty{#1}{}{\vspace{-0.7em}\centering\includegraphics[width=1cm,height=2em,keepaspectratio]{#1}}\\%
+  & & \multicolumn{2}{p{\dimexpr0.75\linewidth+2\tabcolsep\relax}}{#4 \newline #5}\\[0.5em]
 }
 
 % ---------------------------------------------------------------------------
@@ -253,7 +253,7 @@
   %\epigraph{\small\it #1}{\href{#6}{#2}\\ #3\\#4\\#5}%
   \begin{flushleft}\small\it #1\end{flushleft}
   \vspace{-0.75em}
-  {\href{#6}{#2}\\ #3\\#4\\#5}%
+  {\href{#6}{#2}\\ #3\\#4, #5}%
 }
 \newcommand{\cvhline}[0]{%
   %\vspace{0.25em}
