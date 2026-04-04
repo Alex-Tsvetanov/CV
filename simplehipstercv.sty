@@ -119,29 +119,29 @@
 }
 
 \usepackage{xparse}
-\NewDocumentCommand{\projectitem}{O{} O{} m m m m}{%
+\NewDocumentCommand{\projectitem}{O{} O{} m m m m m m}{%
     % #1 = note (e.g. "part of a patent application"), #2 = logo filename (optional)
-    % #3 = url, #4 = project name, #5 = subtitle, #6 = items
+    % #3 = url, #4 = project name, #5 = personal / team, #6 = period, #7 = subtitle, #8 = items
     \ifstrempty{#2}{%
         \noindent\makebox[\linewidth]{%
-            \textbf{\href{#3}{#4} | #5}%
+            \textbf{\href{#3}{#4} | #5 | #6 | #7}% 
             \hfill
-            \ifstrempty{#1}{}{\textit{\scriptsize{#1}}}%
+            \ifstrempty{#1}{}{\textit{\scriptsize\begin{tabular}[c]{@{}r@{}}#1\end{tabular}}}%
         }%
-        \begin{itemize}\color{black!70}#6\end{itemize}%
+        \begin{itemize}\color{black!70}#8\end{itemize}% 
     }{%
         \noindent\begin{tabularx}{\linewidth}{X p{1cm}}
-            \begin{minipage}[t]{\hsize}%
+            \begin{minipage}[t]{\hsize}% 
                 \noindent\makebox[\hsize]{%
-                    \textbf{\href{#3}{#4} | #5}%
+                    \textbf{\href{#3}{#4} | #5 | #6 | #7}% 
                     \hfill
-                    \ifstrempty{#1}{}{\textit{\scriptsize{#1}}}%
+                    \ifstrempty{#1}{}{\textit{\scriptsize\begin{tabular}[c]{@{}r@{}}#1\end{tabular}}}%
                 }%
-                \begin{itemize}\color{black!70}#6\end{itemize}%
-            \end{minipage}%
+                \begin{itemize}\color{black!70}#8\end{itemize}% 
+            \end{minipage}% 
             &
             \begin{minipage}[t]{1cm}\raisebox{-0.7\height}{\includegraphics[width=1cm]{#2}}\end{minipage}\\
-        \end{tabularx}%
+        \end{tabularx}% 
     }%
 }
 
@@ -199,7 +199,7 @@
     % reserve space for text; tweak the subtraction if needed
     \node[right=0.28cm, align=left,
           text width=\dimexpr\linewidth-2em\relax] at (dot.east)
-          {\raggedright\small\ttfamily #4};
+          {\raggedright\small #4};
   \end{tikzpicture}%
 }
 
@@ -248,16 +248,14 @@
 }
 
 % ---------------------------------------------------------------------------
-% \cvreference{quote}{name}{title}{company}{date}{url}
-\newcommand{\cvreference}[6]{%
-  %\epigraph{\small\it #1}{\href{#6}{#2}\\ #3\\#4\\#5}%
+\newcommand{\cvreference}[7]{%
   \begin{flushleft}\small\it #1\end{flushleft}
   \vspace{-0.75em}
-  {\href{#6}{#2}\\ #3\\#4, #5}%
+  {#2 \href{#7}{#3}\\ #4\\#5, #6}%
 }
 \newcommand{\cvhline}[0]{%
-  %\vspace{0.25em}
+  \vspace{-0.75em}
   \textcolor{cvgreen}{\rule{\linewidth}{0.4pt}}
-  %\vspace{0.25em}%
+  \vspace{-0.75em}
 }
 % ---------------------------------------------------------------------------
