@@ -118,43 +118,34 @@
   \raisebox{-0.7\height}{\includegraphics[width=1cm]{#7}}%
 }
 
+\newcommand{\cvdescsize}{\fontsize{8.5pt}{10.2pt}\selectfont}
+
 \usepackage{xparse}
 \NewDocumentCommand{\projectitem}{O{} O{} m m m m m m}{%
     % #1 = note (e.g. "part of a patent application"), #2 = logo filename (optional)
-    % #3 = url, #4 = project name, #5 = personal / team, #6 = period, #7 = subtitle, #8 = items
-    \ifstrempty{#2}{%
-        \noindent\makebox[\linewidth]{%
-            \textbf{\href{#3}{#4} | #5 | #6 | #7}% 
-            \hfill
-            \ifstrempty{#1}{}{\textit{\scriptsize\begin{tabular}[c]{@{}r@{}}#1\end{tabular}}}%
-        }%
-        \begin{itemize}\color{black!70}#8\end{itemize}% 
-    }{%
-        \noindent\begin{tabularx}{\linewidth}{X p{1cm}}
-            \begin{minipage}[t]{\hsize}% 
-                \noindent\makebox[\hsize]{%
-                    \textbf{\href{#3}{#4} | #5 | #6 | #7}% 
-                    \hfill
-                    \ifstrempty{#1}{}{\textit{\scriptsize\begin{tabular}[c]{@{}r@{}}#1\end{tabular}}}%
-                }%
-                \begin{itemize}\color{black!70}#8\end{itemize}% 
-            \end{minipage}% 
-            &
-            \begin{minipage}[t]{1cm}\raisebox{-0.7\height}{\includegraphics[width=1cm]{#2}}\end{minipage}\\
-        \end{tabularx}% 
-    }%
+    % #3 = url, #4 = project name, #5 = subtitle, #6 = personal / team, #7 = period (end\\start), #8 = items
+    \noindent\begin{tabularx}{\linewidth}{p{0.125\linewidth} | X p{1cm}}
+        {\makecell[tr]{#7}\hspace{0.2cm}} &
+        \begin{minipage}[t]{\hsize}%
+            \noindent\textbf{\href{#3}{#4}}%
+            \ifstrempty{#1}{}{\hfill\textit{\scriptsize\begin{tabular}[c]{@{}r@{}}#1\end{tabular}}}%
+            \newline\textsc{#5} $\cdot$ #6%
+            {\vspace{-0.375cm}\color{black!70}\cvdescsize\newline
+            \begin{itemize}[nosep, leftmargin=*, before=\color{black!70}, font=\cvdescsize]#8\end{itemize}}%
+        \end{minipage} &
+        \ifstrempty{#2}{}{\raisebox{-0.7\height}{\includegraphics[width=1cm]{#2}}}\\
+    \end{tabularx}%
 }
 
 \newcommand{\volunterringitem}[5][]{%
     {\makecell[tr]{#3}\hspace{0.2cm}} &
     {\def\href##1##2{\OldHref{##1}{\uline{##2}}}\textbf{#2}} {\scriptsize(#4)}\newline
-    {\color{black!70} #5}\vspace{0.1em} &
+    {\color{black!70}\cvdescsize #5}\vspace{0.1em} &
     \raisebox{-0.7\height}{\includegraphics[width=1cm]{#1}}\\
 }
 
 
-% -----------------------------------------------------------------------------------
-
+% ---------------------------------------------------------
 \newcommand{\simpleheader}[5]{
 \tikz[remember picture,overlay] {%
 \node[rectangle, fill=#1, anchor=north, minimum width=\paperwidth, minimum height=2.7cm](header) at (current page.north){};%
@@ -165,11 +156,10 @@
 }\vspace{-1.65cm}%
 }
 
-
 \usepackage[normalem]{ulem}
 \hypersetup{
   colorlinks=true,
-  linkcolor=black, urlcolor=black, citecolor=black,
+  linkcolor=black, urlcolor=., citecolor=black,
   breaklinks=true
 }
 \let\OldHref\href
@@ -244,12 +234,12 @@
 \NewDocumentCommand{\cvpublication}{O{} m m m m}{%
   \makecell[tr]{#2} & \textbf{#3} &
   \ifstrempty{#1}{}{\vspace{-0.7em}\centering\includegraphics[width=1cm,height=2em,keepaspectratio]{#1}}\\%
-  & & \multicolumn{2}{p{\dimexpr0.75\linewidth+2\tabcolsep\relax}}{#4 \newline #5}\\[0.5em]
+  & & \multicolumn{2}{p{\dimexpr0.75\linewidth+2\tabcolsep\relax}}{{\color{black!70}\cvdescsize\vspace{-0.75em}#4 \newline #5}}\\[1.75em]
 }
 
 % ---------------------------------------------------------------------------
 \newcommand{\cvreference}[7]{%
-  \begin{flushleft}\small\it #1\end{flushleft}
+  \begin{flushleft}{\fontfamily{lmss}\fontseries{m}\fontshape{it}\cvdescsize\selectfont #1}\end{flushleft}
   \vspace{-0.75em}
   {#2 \href{#7}{#3}\\ #4\\#5, #6}%
 }

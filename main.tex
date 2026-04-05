@@ -20,9 +20,9 @@
 \setlist{leftmargin=10pt}
 
 % 2) Force list *content* to black everywhere
-\AtBeginEnvironment{itemize}{\color{black}}
-\AtBeginEnvironment{enumerate}{\color{black}}
-\AtBeginEnvironment{description}{\color{black}}
+\AtBeginEnvironment{itemize}{\color{black!70}}
+\AtBeginEnvironment{enumerate}{\color{black!70}}
+\AtBeginEnvironment{description}{\color{black!70}}
 
 \setlist[itemize]{label=\textcolor{black}{\textbullet}}
 
@@ -228,8 +228,7 @@ Rock\&Metal Music
 \sideheading{My mindset}
 \vspace{-0.5em}
 \begin{flushleft}
-\small\it
-If it breaks under pressure, it was already broken.
+{\fontfamily{lmss}\fontseries{m}\fontshape{it}\small\selectfont If it breaks under pressure, it was already broken.}
 \end{flushleft}
 
 \vspace{0.5em}
@@ -310,7 +309,7 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {Sep 2023}
         {Computer and Software Engineering}
         {B.Eng., State-funded}
-        {\href{https://tu-sofia.bg/faculties/read/27}{Technical University of Sofia, Bulgaria} 
+        {\href{https://tu-sofia.bg/faculties/read/27?lang=en}{Technical University of Sofia, Bulgaria} 
             {\color{headerblue}\footnotesize ~\faUniversity}
         }
         {Thesis: "Design and Development of a Compile-time ORM library in C++"\newline Full-time, Grade: Excellent, 240 ECTS.}
@@ -332,7 +331,7 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {Sep 2021}
         {Industrial Engineering in English}
         {B.Eng., State-funded}
-        {\href{https://www.tu-sofia.bg/specialties/preview/666}{Technical University of Sofia, Bulgaria} 
+        {\href{https://tu-sofia.bg/specialties/preview/666?lang=en}{Technical University of Sofia, Bulgaria} 
             {\color{headerblue}\footnotesize ~\faUniversity}
         }
         {Full-time, Transferred abroad.}
@@ -356,7 +355,7 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {Summer Research School}
         {on-site, Blagoevgrad, Bulgaria}
         {Summer School}
-        {\href{https://www.math.bas.bg/omi/hssimi/?page\_id=425}{Bulgarian Academy of Sciences}}
+        {\href{https://www.math.bas.bg/omi/hssimi/?page\_id=425\&lang=en}{Bulgarian Academy of Sciences}}
         {Research-focused program led by top scientists in Europe. Participated in cybersecurity, AI, and systems modeling projects under academic mentorship.}
         {images/trainings/bas-logo.png} \\
 
@@ -366,7 +365,7 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {SAP Geeky Camp 5.0}
         {on-site, Sofia, Bulgaria}
         {Summer School}
-        {\href{https://www.sap.com/bulgaria/about.html}{SAP Bulgaria}}
+        {\href{https://www.sap.com/about/company/office-locations/bulgaria.html}{SAP Bulgaria}}
         {Selective summer tech camp with intensive focus on algorithms, data structures, and solving real-world software engineering problems in teams.}
         {images/trainings/SAP.png} \\
     
@@ -442,20 +441,19 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
 \end{tabularx}
  \newpage
 \section*{Projects}
-\projectitem[part of a\\patent application][images/projects/omnix.png]{https://github.com/Alex-Tsvetanov/WebFrame}{Coroute/WebFrame++}{Web Framework}{Personal}{2017-}{
+\projectitem[part of a\\patent application][images/projects/omnix.png]{https://github.com/Alex-Tsvetanov/WebFrame}{Coroute/WebFrame++}{Cross-Platform Web Framework}{Personal}{2017\\Present}{
     \item Designed and benchmarked a high-performance asynchronous server architecture handling 750'000 to 1.2 million requests per second across Windows and Linux (measured with wrk and ab).
     \item Implemented a coroutine-based I/O scheduler and lock-free queues, improving throughput by about 13\%.
     \item Developed a modular networking layer that abstracts IOCP, io\_uring, and kqueue into a unified asynchronous API.
-    \item Evaluated coroutine scheduling models and caching strategies to minimize latency jitter.
-    \item Expanded functionality to support coroutine-based HTTP pipelining and asynchronous file streaming.
+    \item Evaluated coroutine scheduling models and caching strategies to minimize latency jitter, and extended the framework with HTTP pipelining and asynchronous file streaming.
 }
-\projectitem[][images/projects/headstarter_logo2.png]{https://github.com/Headstarter/}{Headstarter}{High-school Entrepreneurship Project}{Team}{2018-2022}{
+\projectitem[][images/projects/headstarter_logo2.png]{https://github.com/Headstarter/}{Headstarter}{High-school Entrepreneurship Project}{Team}{2018\\2022}{
     \item Developing and maintaining the Headstarter web platform for connecting young students with businesses offering internships and jobs.
     \item Supporting the platform goals of guiding students in career paths, networking, and
     gaining experience.
     \item Organizing the team's workload for efficient operations and service delivery.
 }
-\projectitem[][images/projects/techedu.png]{https://github.com/TechEducationPlusPlus}{TechEdu++}{Learning Management System for Informatics}{Team}{2016-2019}{
+\projectitem[][images/projects/techedu.png]{https://github.com/TechEducationPlusPlus}{TechEdu++}{Learning Management System for Informatics}{Team}{2016\\2019}{
     \item Developing a learning management system (LMS) with Informatics courses for high school students.
     \item Creating short, engaging video lessons in multiple programming languages.
     \item Integrating TechEdu++ into the teaching processes at Sofia High School of Mathematics.
@@ -470,7 +468,7 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {Delivered a 5-minute lightning talk on leveraging C++20 coroutines (\texttt{co\_await}) over unified kernel I/O queues, covering the submit/completion queue model, a coroutine-friendly async I/O API, and a thread-pool executor design — demonstrating how modern C++ enables high-throughput, low-latency I/O with synchronous-style code.}
     %\volunterringitem[openfest.png]{\href{https://youtu.be/EjGf3FXAsNA?t=23415}{Lighting talk speaker at OpenFest}}{Nov 2024}{on-site, Sofia, Bulgaria}{Delivered two 5-minute lightning talks. The first one was about the optimizations implemented in WebFrame++ to minimize the thread overhead during low to medium load onto the web server and the second one was about the development and benefits of Chaos Group's in-house project, which got open-sourced - \href{https://github.com/ChaosGroup/sketchup-cpp-api}{SketchUp-CPP-API}.}
     \volunterringitem[images/education/SMG-logo.png]
-        {Author \& Co-organizer of Open Doors Day at \href{https://smg.bg/}{Sofia High School of Mathematics}}
+        {Author \& Co-organizer of Open Doors Day at \href{https://youtube.com/playlist?list=PLeH4dQCXauyJWcP6b1-d9E4oo5-82umZ2&si=Bgk9394lzdbGYPPO}{Sofia High School of Mathematics}}
         {Apr 2018\\Apr 2020}
         {on-site, Sofia, Bulgaria}
         {Organized 3 annual editions of the Open Doors Day event, where 19 alumni shared their career journeys post-graduation. Coordinated all logistics and communication with guest speakers, created the event schedule, and set up the server infrastructure for live streaming and online attendance.}
@@ -480,20 +478,20 @@ High-Performance Systems Engineer specializing in C++20 concurrency and cross-pl
         {on-site, Sofia, Bulgaria}
         {Volunteered as a mentor guiding young learners (“Ninjas”) through basic programming concepts. Assisted them in building small personal projects, encouraged curiosity, and provided support during hands-on coding sessions.}
     \volunterringitem[images/volunteering/softuni.png]
-        {Technical Trainer at \href{https://softuni.bg/}{Software University}}
+        {Technical Trainer at \href{https://softuni.bg/trainings/1655/python-basics-may-2017}{Software University}}
         {May 2017\\June 2017}
         {on-site, Sofia, Bulgaria}
-        {Delivered Python programming lectures to a diverse group of learners, including working professionals retraining for software roles. Covered foundational topics such as syntax, control flow, functions, data structures, and OOP principles. Led live coding sessions, assigned practical exercises and homework, and evaluated performance through final exams. Adapted teaching style to accommodate varying experience levels and backgrounds.}
+        {Delivered Python programming lectures to a diverse group of learners, including working professionals retraining for software roles. Led live coding sessions, assigned practical exercises and homework, and evaluated performance through final exams. Adapted teaching style to accommodate varying experience levels and backgrounds.}
     \volunterringitem[images/volunteering/testrain.png]
         {Project "Testrain" part of the \href{https://www.researchgate.net/publication/329013929_KOMPUTRNA_SIMULACIA_VIRTUALNA_PROVERKA_NA_TEORIATA_ZA_AFEKTITE_I_SCENARIITE_SZDADENA_OT_SILVAN_TOMKINS_A_COMPUTER_SIMULATION_VIRTUAL_TEST_OF_SILVAN_TOMKINS'_AFFECT_AND_SCRIPT_THEORY}{"A Computer Simulation Virtual Test of Silvan Tomkins' Affect and Script Theory" conference paper}}
         {Sep 2016\\June 2017}
         {on-site, Sofia, Bulgaria}
         {Developed the web interface for an experimental platform simulating emotional response theory based on Silvan Tomkins' work. Contributed to the visualization and interaction layer of the research tool used in academic experiments.}
     \volunterringitem[images/volunteering/sofia.png]
-        {Competitor from the Sofia city team in Algorithmic programming}
+        {Competitor from \href{https://www.facebook.com/photo?fbid=1431585363534410&set=a.573871678115841}{the Sofia city team} in Algorithmic programming}
         {Sep 2013\\June 2021}
         {on-site, Sofia, Bulgaria}
-        {Participated in national and international competitions.}
+        {Competed in national and international algorithmic competitions over 8 years, solving challenging problems within limited amount of time using advanced algorithms, data structures, and analytical thinking. Won numerous awards at both levels, becoming the youngest competitor on record at age~9 and the youngest gold medalist at age~10.}
 \end{tabularx}
 % \vfill
 % %----------------------------------------------------------------------------------------
